@@ -1,6 +1,7 @@
 #!/bin/bash
-# 一键截图: Xvfb → 启动(--screenshot) → 自动截图并退出
+# 一键截图: Xvfb → 启动 → 截图 → 关闭
 # 用法: ./screenshot.sh [输出路径]
+# 示例: ./screenshot.sh /tmp/my_gui.png
 set -e
 OUT="${1:-/tmp/nekoecat_screenshot.png}"
 BIN="gui-cpp/build/NekoECATConverter"
