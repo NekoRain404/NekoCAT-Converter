@@ -1,8 +1,10 @@
 """
 Merger — combines ESI and SDO DeviceModels into a unified model.
 
-Strategy: SDO objects take precedence for data_type/access/default_value
-(because SDO is the detailed source), while ESI provides PDO/SM/DC/FMMU config.
+Per dev doc §8:
+  - SDO objects take precedence for data_type/access/default_value.
+  - ESI provides PDO/SM/DC/FMMU config.
+  - After merge, mark PDO direction on each entry (rx/tx).
 
 Only depends on model/.
 """
@@ -16,10 +18,11 @@ console = Console()
 def merge(esi_device: DeviceModel, sdo_device: DeviceModel) -> DeviceModel:
     """Merge ESI and SDO into a single DeviceModel.
 
-    - Identity: prefer ESI (it has vendor info).
-    - Objects: merge by index; SDO data wins for detailed fields.
-    - PDO/SM/DC/FMMU: from ESI (SDO usually doesn't carry these).
-    - Issues: combined from both.
+    Steps (dev doc §8):
+      1. Copy ESI identity.
+      2. Merge objects by index (SDO data wins for detail fields).
+      3. Copy transport config from ESI (SM/FMMU/DC/PDO assignments).
+      4. Mark PDO direction on each entry (rx/tx).
     """
     merged = DeviceModel()
 
@@ -49,6 +52,9 @@ def merge(esi_device: DeviceModel, sdo_device: DeviceModel) -> DeviceModel:
     merged.rxpdo_assign = esi_device.rxpdo_assign
     merged.txpdo_assign = esi_device.txpdo_assign
 
+    # ── mark PDO direction on entries (§8) ─────
+    _mark_pdo_directions(merged, esi_device)
+
     # ── issues from both ───────────────────────
     merged.issues = esi_device.issues + sdo_device.issues
 
@@ -57,6 +63,40 @@ def merge(esi_device: DeviceModel, sdo_device: DeviceModel) -> DeviceModel:
         f"{len(merged.issues)} inherited issues"
     )
     return merged
+
+
+def _mark_pdo_directions(merged: DeviceModel, esi: DeviceModel):
+    """Walk ESI RxPDO/TxPDO entries and mark pdo_direction on merged objects."""
+    for sm in esi.sm_configs:
+        for pdo in sm.pdos:
+            direction = "rx" if sm.pdo_type == "outputs" else "tx" if sm.pdo_type == "inputs" else ""
+            if not direction:
+                continue
+            for entry in pdo.entries:
+                _mark_entry(merged, entry.index, entry.subindex, direction)
+
+    # Also check explicit RxPDO/TxPDO assignments
+    for pdo_idx in esi.rxpdo_assign:
+        pdo_obj = esi.get_object(pdo_idx)
+        if pdo_obj:
+            for sub in pdo_obj.subindices:
+                _mark_entry(merged, pdo_idx, sub.subindex, "rx")
+
+    for pdo_idx in esi.txpdo_assign:
+        pdo_obj = esi.get_object(pdo_idx)
+        if pdo_obj:
+            for sub in pdo_obj.subindices:
+                _mark_entry(merged, pdo_idx, sub.subindex, "tx")
+
+
+def _mark_entry(device: DeviceModel, index: int, subindex: int, direction: str):
+    """Mark a specific entry's pdo_direction."""
+    obj = device.get_object(index)
+    if obj is None:
+        return
+    for sub in obj.subindices:
+        if sub.subindex == subindex:
+            sub.pdo_direction = direction
 
 
 def _merge_object(esi: ObjectEntry, sdo: ObjectEntry) -> ObjectEntry:
