@@ -452,14 +452,20 @@ void MainWindow::onImport() {
         root = QFileInfo(root).path() + "/..";
 
     // Python 内联脚本
+    // Python 内联脚本: 日志输出到 stderr, JSON 输出到 stdout
     QString pyScript =
-        "import sys, json\n"
-        "sys.path.insert(0, '.')\n"
+        "import sys, json, os\n"
+        "os.environ.setdefault(\"PYTHONDONTWRITEBYTECODE\", \"1\")\n"
+        "sys.path.insert(0, \".\")\n"
+        "import logging\n"
+        "logging.disable(logging.CRITICAL)\n"
         "from nekoecat.core import parse_only\n"
-        "esi = sys.argv[1] if sys.argv[1] != 'None' else None\n"
-        "sdo = sys.argv[2] if sys.argv[2] != 'None' else None\n"
+        "esi = sys.argv[1] if sys.argv[1] != \"None\" else None\n"
+        "sdo = sys.argv[2] if sys.argv[2] != \"None\" else None\n"
         "d = parse_only(esi_path=esi, sdo_path=sdo)\n"
-        "print(json.dumps(d.model_dump(mode='json'), ensure_ascii=False))";
+        "result = json.dumps(d.model_dump(mode=\"json\"), ensure_ascii=False)\n"
+        "sys.stdout.write(result)\n"
+        "sys.stdout.flush()";
 
     QProcess proc;
     proc.setWorkingDirectory(root);
@@ -497,7 +503,15 @@ void MainWindow::onImport() {
     }
 
     // ── 解析成功 ────────────────────────────
-    m_devJson = QString::fromUtf8(proc.readAllStandardOutput()).trimmed();
+    // 从 stdout 中提取 JSON (跳过任何非 JSON 前缀)
+    QString rawOutput = QString::fromUtf8(proc.readAllStandardOutput()).trimmed();
+    int jsonStart = rawOutput.indexOf(QString("{"));
+    int jsonEnd = rawOutput.lastIndexOf(QString("}"));
+    if (jsonStart >= 0 && jsonEnd > jsonStart) {
+        m_devJson = rawOutput.mid(jsonStart, jsonEnd - jsonStart + 1);
+    } else {
+        m_devJson = rawOutput;
+    }
     m_prog->setValue(50);
 
     QJsonObject dev = QJsonDocument::fromJson(m_devJson.toUtf8()).object();
