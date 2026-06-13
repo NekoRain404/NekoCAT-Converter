@@ -1,0 +1,55 @@
+/**
+ * Auto-generated CoE callback stubs — NekoECAT Converter
+ * Device: {{ device.identity.device_name }}
+ * Generated: {{ timestamp }}
+ *
+ * Objects with CoE read/write callbacks:
+ * {% for obj in callback_objects %}
+ *   0x{{ "%04X" | format(obj.index) }}  {{ obj.name }}  (R={{ obj.coe_read }}, W={{ obj.coe_write }})
+ * {%- endfor %}
+ */
+
+#include "ecatappl.h"
+
+/* ── CoE Read Callbacks ────────────────────── */
+
+{% for obj in callback_objects if obj.coe_read %}
+UINT16 {{ obj.name | replace(" ", "_") | lower }}_coe_read(
+    UINT16 index,
+    UINT8 subindex,
+    UINT32 size,
+    UINT16 *data)
+{
+    /* TODO: implement read logic for 0x{{ "%04X" | format(obj.index) }} */
+    return 0;
+}
+{% endfor %}
+
+/* ── CoE Write Callbacks ───────────────────── */
+
+{% for obj in callback_objects if obj.coe_write %}
+UINT16 {{ obj.name | replace(" ", "_") | lower }}_coe_write(
+    UINT16 index,
+    UINT8 subindex,
+    UINT32 size,
+    UINT16 *data)
+{
+    /* TODO: implement write logic for 0x{{ "%04X" | format(obj.index) }} */
+    return 0;
+}
+{% endfor %}
+
+/* ── Callback Registration ─────────────────── */
+
+void register_coe_callbacks(void)
+{
+{% for obj in callback_objects %}
+    /* 0x{{ "%04X" | format(obj.index) }} {{ obj.name }} */
+{% if obj.coe_read %}
+    APPL_SetCoESdoReadCallback({{ obj.name | replace(" ", "_") | lower }}_coe_read);
+{% endif %}
+{% if obj.coe_write %}
+    APPL_SetCoESdoWriteCallback({{ obj.name | replace(" ", "_") | lower }}_coe_write);
+{% endif %}
+{% endfor %}
+}

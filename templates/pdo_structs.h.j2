@@ -1,0 +1,36 @@
+/**
+ * Auto-generated PDO structures — NekoECAT Converter
+ * Device: {{ device.identity.device_name }}
+ * Generated: {{ timestamp }}
+ */
+
+#ifndef __PDO_STRUCTS_H__
+#define __PDO_STRUCTS_H__
+
+#include "ecat_def.h"
+
+/* ── RxPDO (outputs from master) ───────────── */
+
+{% for pdo in rx_pdos %}
+typedef struct PACKED {
+    /* {{ pdo.name }} (0x{{ "%04X" | format(pdo.index) }}) */
+{% for entry in pdo.entries %}
+    {{ entry.c_type }}  {{ entry.field_name }};  /* 0x{{ "%04X" | format(entry.index) }}:{{ "%02X" | format(entry.subindex) }} {{ entry.name }} — {{ entry.bit_length }}bit */
+{% endfor %}
+} {{ pdo.struct_name }};
+
+{% endfor %}
+
+/* ── TxPDO (inputs to master) ──────────────── */
+
+{% for pdo in tx_pdos %}
+typedef struct PACKED {
+    /* {{ pdo.name }} (0x{{ "%04X" | format(pdo.index) }}) */
+{% for entry in pdo.entries %}
+    {{ entry.c_type }}  {{ entry.field_name }};  /* 0x{{ "%04X" | format(entry.index) }}:{{ "%02X" | format(entry.subindex) }} {{ entry.name }} — {{ entry.bit_length }}bit */
+{% endfor %}
+} {{ pdo.struct_name }};
+
+{% endfor %}
+
+#endif /* __PDO_STRUCTS_H__ */

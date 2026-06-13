@@ -1,0 +1,42 @@
+# NekoECAT Conversion Report
+
+Generated: {{ timestamp }}
+Generator: NekoECAT Converter v{{ version }}
+
+## Device Identity
+
+| Field | Value |
+|-------|-------|
+| Vendor | {{ device.identity.vendor_name }} (0x{{ "%08X" | format(device.identity.vendor_id) }}) |
+| Product Code | 0x{{ "%08X" | format(device.identity.product_code) }} |
+| Revision | 0x{{ "%08X" | format(device.identity.revision_number) }} |
+| Name | {{ device.identity.device_name }} |
+
+## Statistics
+
+| Metric | Count |
+|--------|-------|
+| Total objects | {{ total_objects }} |
+| Comm objects (filtered) | {{ comm_count }} |
+| Application objects | {{ app_count }} |
+| SM configs | {{ sm_count }} |
+| RxPDO assignments | {{ rxpdo_count }} |
+| TxPDO assignments | {{ txpdo_count }} |
+| Issues total | {{ issue_count }} |
+| Issues fixed | {{ fixed_count }} |
+
+## Issues
+
+| Severity | Code | Object | Message | Fixed |
+|----------|------|--------|---------|-------|
+{% for issue in issues %}
+| {{ issue.severity }} | {{ issue.code }} | {{ issue.object_index }} | {{ issue.message }} | {{ "✓" if issue.fixed else "" }} |
+{% endfor %}
+
+## Callback Objects
+
+| Index | Name | DataType | CoeRead | CoeWrite |
+|-------|------|----------|---------|----------|
+{% for obj in callback_objects %}
+| 0x{{ "%04X" | format(obj.index) }} | {{ obj.name }} | {{ obj.data_type }} | {{ obj.coe_read }} | {{ obj.coe_write }} |
+{% endfor %}
