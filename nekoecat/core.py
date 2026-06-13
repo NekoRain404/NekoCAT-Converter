@@ -1,14 +1,12 @@
 """
-nekoecat.core — Public facade for the conversion pipeline.
+nekoecat.core — 公共门面层 (Facade)。
 
-Orchestrates:  parser → engine → generator.
-CLI/GUI call into this module only.
+GUI 和 CLI 只调用本模块，不直接导入 parser/engine/generator。
+这是解耦的核心：上层不感知下层实现。
 
-Usage:
-    from nekoecat.core import convert, ConvertConfig
-
-    config = ConvertConfig(esi_path="ESI.XML", sdo_path="SDO.XML")
-    result = convert(config)
+Public API:
+    parse_only(esi_path, sdo_path) → DeviceModel   # 仅解析，供 GUI "Parse" 按钮
+    convert(config) → ConvertResult                  # 完整转换管线
 """
 import json
 import logging
@@ -28,12 +26,12 @@ console = Console()
 
 
 # ──────────────────────────────────────────────
-# Result container
+# 结果容器
 # ──────────────────────────────────────────────
 
 @dataclass
 class ConvertResult:
-    """Outcome of a full conversion run."""
+    """一次完整转换的结果。"""
     success: bool = False
     output_dir: str = ""
     xlsx_path: str = ""
@@ -44,93 +42,134 @@ class ConvertResult:
 
 
 # ──────────────────────────────────────────────
-# Main pipeline
+# 仅解析（供 GUI "Parse" 按钮调用）
+# ──────────────────────────────────────────────
+
+def parse_only(
+    esi_path: Optional[str] = None,
+    sdo_path: Optional[str] = None,
+) -> DeviceModel:
+    """只做解析 + 合并 + 分类，不做规则检查和修复。
+
+    GUI 的 "Parse" 按钮调用此函数，拿到 DeviceModel 后
+    更新各个页面的显示。
+
+    Args:
+        esi_path: ESI XML 文件路径，可为 None
+        sdo_path: SDO 文件路径 (XML 或文本格式)，可为 None
+
+    Returns:
+        合并后的 DeviceModel
+
+    Raises:
+        FileNotFoundError: 文件不存在
+        ValueError: 两个路径都为 None
+    """
+    if not esi_path and not sdo_path:
+        raise ValueError("至少提供一个 ESI 或 SDO 文件路径")
+
+    esi_device = parse_esi(esi_path) if esi_path else None
+    sdo_device = parse_sdo(sdo_path) if sdo_path else None
+
+    # 合并策略：两个都有则 merge，否则取有数据的那个
+    if esi_device and sdo_device:
+        device = merge(esi_device, sdo_device)
+    else:
+        device = esi_device or sdo_device
+
+    # 分类（设置 category、is_pdo_mapping_object 等标志）
+    classify_objects(device)
+
+    return device
+
+
+# ──────────────────────────────────────────────
+# 完整转换管线
 # ──────────────────────────────────────────────
 
 def convert(config: ConvertConfig) -> ConvertResult:
-    """Run the full conversion pipeline.
+    """运行完整的转换管线。
 
-    Steps (dev doc §14):
-        1. Parse ESI / SDO
-        2. Merge
-        3. Apply identity overrides
-        4. Classify objects
-        5. Run rule checks
-        6. Auto-fix
-        7. Validate
-        8. Generate outputs (xlsx, report, json, log)
+    步骤 (dev doc §14):
+        1. 解析 ESI / SDO
+        2. 合并
+        3. 应用身份覆盖
+        4. 对象分类
+        5. 规则检查
+        6. 自动修复
+        7. 校验
+        8. 生成输出 (xlsx, report, json, log)
     """
     result = ConvertResult()
 
     if not config.esi_path and not config.sdo_path:
-        result.error = "At least one of esi_path or sdo_path is required"
+        result.error = "至少提供一个 ESI 或 SDO 文件路径"
         return result
 
-    # ── set up output dir ──────────────────────
+    # ── 创建输出目录 ──────────────────────────
     ts = datetime.now().strftime("%Y%m%d_%H%M")
     device_label = config.device_name or "device"
     out = Path(config.output_dir) / f"{device_label}_{ts}"
     out.mkdir(parents=True, exist_ok=True)
     result.output_dir = str(out)
 
-    # ── set up logging ─────────────────────────
+    # ── 设置日志 ──────────────────────────────
     log_path = out / "logs" / "convert.log"
     log_path.parent.mkdir(parents=True, exist_ok=True)
     result.log_path = str(log_path)
 
     logger = _setup_logger(log_path)
-    logger.info("NekoECAT Converter — conversion started")
-    logger.info(f"Config: esi={config.esi_path}, sdo={config.sdo_path}")
+    logger.info("NekoECAT Converter — 转换开始")
+    logger.info(f"配置: esi={config.esi_path}, sdo={config.sdo_path}")
 
     try:
-        # ── 1. Parse ───────────────────────────
-        console.rule("[bold blue]Parsing[/bold blue]")
-        logger.info("Parsing ESI...")
+        # ── 1. 解析 ───────────────────────────
+        console.rule("[bold blue]解析[/bold blue]")
+        logger.info("解析 ESI...")
         esi_device = parse_esi(config.esi_path) if config.esi_path else DeviceModel()
-        logger.info(f"  ESI: {len(esi_device.objects)} objects")
+        logger.info(f"  ESI: {len(esi_device.objects)} 个对象")
 
-        logger.info("Parsing SDO...")
+        logger.info("解析 SDO...")
         sdo_device = parse_sdo(config.sdo_path) if config.sdo_path else DeviceModel()
-        logger.info(f"  SDO: {len(sdo_device.objects)} objects")
+        logger.info(f"  SDO: {len(sdo_device.objects)} 个对象")
 
-        # ── 2. Merge ───────────────────────────
-        console.rule("[bold blue]Merging[/bold blue]")
+        # ── 2. 合并 ───────────────────────────
+        console.rule("[bold blue]合并[/bold blue]")
         if config.esi_path and config.sdo_path:
             device = merge(esi_device, sdo_device)
         elif config.esi_path:
             device = esi_device
         else:
             device = sdo_device
-        logger.info(f"Merged: {len(device.objects)} objects")
+        logger.info(f"合并后: {len(device.objects)} 个对象")
 
-        # ── 3. Apply identity overrides ────────
+        # ── 3. 应用身份覆盖 ───────────────────
         _apply_identity_overrides(device, config)
 
-        # ── 4. Classify ────────────────────────
+        # ── 4. 分类 ───────────────────────────
         classify_objects(device)
 
-        # ── 5. Rules ───────────────────────────
-        console.rule("[bold blue]Rule Engine[/bold blue]")
+        # ── 5. 规则检查 ───────────────────────
+        console.rule("[bold blue]规则检查[/bold blue]")
         run_rules(device)
-        logger.info(f"Rules: {device.issue_count()} issues")
+        logger.info(f"规则: {device.issue_count()} 个问题")
 
-        # ── 6. Auto-fix ────────────────────────
-        console.rule("[bold blue]Auto-Fix[/bold blue]")
+        # ── 6. 自动修复 ───────────────────────
+        console.rule("[bold blue]自动修复[/bold blue]")
         auto_fix(device)
-        logger.info(f"Auto-fix: {device.fixed_count()} issues fixed")
+        logger.info(f"修复: {device.fixed_count()} 个已修复")
 
-        # ── 7. Validate ────────────────────────
-        console.rule("[bold blue]Validation[/bold blue]")
+        # ── 7. 校验 ───────────────────────────
+        console.rule("[bold blue]校验[/bold blue]")
         if not validate(device):
-            result.error = "Validation failed — see issues in report"
+            result.error = "校验失败 — 请查看报告中的问题列表"
             result.device = device
-            logger.error("Validation failed")
+            logger.error("校验失败")
             return result
 
-        # ── 8. Generate outputs ────────────────
-        console.rule("[bold blue]Generating outputs[/bold blue]")
+        # ── 8. 生成输出 ───────────────────────
+        console.rule("[bold blue]生成输出[/bold blue]")
 
-        # SSC xlsx
         if config.generate_xlsx:
             xlsx_path = generate_ssc_xlsx(
                 device,
@@ -138,41 +177,39 @@ def convert(config: ConvertConfig) -> ConvertResult:
                 template_path=config.template_xlsx_path,
             )
             result.xlsx_path = xlsx_path
-            logger.info(f"Generated xlsx: {xlsx_path}")
+            logger.info(f"生成 xlsx: {xlsx_path}")
 
-        # Reports (always generate)
         if config.generate_report:
             report_files = generate_report(device, str(out))
             result.report_files = report_files
-            logger.info(f"Reports: {list(report_files.keys())}")
+            logger.info(f"报告: {list(report_files.keys())}")
 
-        # device.normalized.json (dev doc §18)
         if config.generate_json:
             json_path = _write_normalized_json(device, out, device_label)
             result.report_files["normalized_json"] = json_path
-            logger.info(f"Normalized JSON: {json_path}")
+            logger.info(f"归一化 JSON: {json_path}")
 
         result.success = True
         result.device = device
 
-        console.rule("[bold green]Done[/bold green]")
-        console.print(f"[green]Output:[/green] {out}")
-        logger.info("Conversion completed successfully")
+        console.rule("[bold green]完成[/bold green]")
+        console.print(f"[green]输出目录:[/green] {out}")
+        logger.info("转换成功完成")
 
     except Exception as exc:
         result.error = str(exc)
         console.print_exception()
-        logger.exception(f"Conversion failed: {exc}")
+        logger.exception(f"转换失败: {exc}")
 
     return result
 
 
 # ──────────────────────────────────────────────
-# Helpers
+# 内部辅助函数
 # ──────────────────────────────────────────────
 
 def _apply_identity_overrides(device: DeviceModel, config: ConvertConfig):
-    """Override device identity from config."""
+    """将配置中的身份覆盖应用到设备模型。"""
     if config.vendor_id is not None:
         device.identity.vendor_id = config.vendor_id
     if config.product_code is not None:
@@ -184,7 +221,7 @@ def _apply_identity_overrides(device: DeviceModel, config: ConvertConfig):
 
 
 def _write_normalized_json(device: DeviceModel, out: Path, label: str) -> str:
-    """Write device.normalized.json — used to reproduce issues (dev doc §18)."""
+    """写入 device.normalized.json — 用于问题复现 (dev doc §18)。"""
     path = out / f"{label}.normalized.json"
     data = device.model_dump(mode="json")
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -192,10 +229,9 @@ def _write_normalized_json(device: DeviceModel, out: Path, label: str) -> str:
 
 
 def _setup_logger(log_path: Path) -> logging.Logger:
-    """Set up file logger for the conversion."""
+    """创建文件日志记录器。"""
     logger = logging.getLogger("nekoecat.convert")
     logger.setLevel(logging.DEBUG)
-    # Clear existing handlers
     logger.handlers.clear()
     fh = logging.FileHandler(str(log_path), encoding="utf-8")
     fh.setLevel(logging.DEBUG)

@@ -1,17 +1,24 @@
 """
-Main Window — orchestrates all pages and the conversion worker.
+MainWindow — 主窗口：左侧边导航 + 右侧内容区。
 
-Signal flow:
-  Page1.parse_requested → main_window._on_parse → worker → Page1/4/5 updates
-  Page6.generate_all   → main_window._on_generate_all → worker → Page6 updates
+布局参考 docs/ui/ 参考图：
+  ┌────────────┬──────────────────────────┐
+  │ 侧边栏     │  QStackedWidget (内容页)  │
+  │ Step 1     │                          │
+  │ Step 2     │                          │
+  │ Step 3     ├──────────────────────────┤
+  │            │  底部：日志 + 进度 + 生成  │
+  └────────────┴──────────────────────────┘
 
-Only depends on: gui.widgets, gui.worker, nekoecat.core.
+解耦原则：只导入 nekoecat.core（门面）。
 """
 from PyQt5.QtWidgets import (
-    QMainWindow, QTabWidget, QTextEdit, QSplitter,
-    QStatusBar, QMenuBar, QAction, QWidget, QVBoxLayout,
+    QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
+    QPushButton, QTextEdit, QProgressBar, QLabel,
+    QSplitter, QStackedWidget, QFrame, QSizePolicy,
 )
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QSize
+from PyQt5.QtGui import QFont, QIcon, QColor, QPalette
 
 from gui.widgets.file_select_page import FileSelectPage
 from gui.widgets.identity_page import IdentityPage
@@ -21,19 +28,111 @@ from gui.widgets.pdo_page import PdoPage
 from gui.widgets.generate_page import GeneratePage
 from gui.worker import ConvertWorker
 from nekoecat.config import ConvertConfig
-from nekoecat.parser import parse_esi, parse_sdo
-from nekoecat.engine import classify_objects
+from nekoecat.core import parse_only
+
+# ── 深色主题样式 (参考 UI 图) ─────────────────
+DARK_STYLE = """
+QMainWindow, QWidget {
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+    font-size: 13px;
+}
+QGroupBox {
+    border: 1px solid #555;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding-top: 14px;
+    font-weight: bold;
+    color: #aaa;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 4px;
+}
+QLineEdit {
+    background-color: #3c3c3c;
+    border: 1px solid #555;
+    border-radius: 3px;
+    padding: 5px;
+    color: #e0e0e0;
+}
+QPushButton {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 16px;
+    font-weight: bold;
+}
+QPushButton:hover { background-color: #0b5ed7; }
+QPushButton:pressed { background-color: #0a58ca; }
+QPushButton:disabled { background-color: #555; color: #888; }
+QPushButton#sidebar-btn {
+    background-color: transparent;
+    text-align: left;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #ccc;
+}
+QPushButton#sidebar-btn:hover { background-color: #3c3c3c; }
+QPushButton#sidebar-btn[active="true"] {
+    background-color: #0d6efd;
+    color: white;
+    font-weight: bold;
+}
+QRadioButton { color: #e0e0e0; spacing: 6px; }
+QRadioButton::indicator { width: 16px; height: 16px; }
+QCheckBox { color: #e0e0e0; spacing: 6px; }
+QTextEdit {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: #d4d4d4;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+}
+QTableWidget {
+    background-color: #1e1e1e;
+    alternate-background-color: #252525;
+    color: #e0e0e0;
+    gridline-color: #444;
+    border: 1px solid #444;
+}
+QTableWidget::item { padding: 4px; }
+QHeaderView::section {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    padding: 5px;
+    font-weight: bold;
+}
+QProgressBar {
+    border: 1px solid #555;
+    border-radius: 4px;
+    text-align: center;
+    color: white;
+}
+QProgressBar::chunk { background-color: #0d6efd; border-radius: 3px; }
+QLabel#sidebar-title { font-size: 16px; font-weight: bold; color: #0d6efd; }
+QLabel#sidebar-subtitle { font-size: 11px; color: #888; }
+QLabel#step-label { font-size: 11px; font-weight: bold; color: #0d6efd; }
+"""
 
 
 class MainWindow(QMainWindow):
-    """Main application window with tabbed pages and log area."""
+    """主窗口：左侧导航 + 右侧内容区 + 底部日志/进度。"""
 
     def __init__(self):
         super().__init__()
         self.setWindowTitle("NekoECAT Converter")
-        self.setMinimumSize(960, 720)
+        self.setMinimumSize(1100, 700)
+        self.resize(1200, 750)
 
-        # ── Pages ──────────────────────────────
+        # 应用深色主题
+        self.setStyleSheet(DARK_STYLE)
+
+        # ── 创建各页面 ─────────────────────────
         self._file_page = FileSelectPage()
         self._identity_page = IdentityPage()
         self._rule_page = RulePage()
@@ -41,74 +140,159 @@ class MainWindow(QMainWindow):
         self._pdo_page = PdoPage()
         self._gen_page = GeneratePage()
 
-        # ── Tab widget ─────────────────────────
-        tabs = QTabWidget()
-        tabs.addTab(self._file_page, "1. File Import")
-        tabs.addTab(self._identity_page, "2. Identity")
-        tabs.addTab(self._rule_page, "3. Rules")
-        tabs.addTab(self._obj_page, "4. Objects")
-        tabs.addTab(self._pdo_page, "5. PDO/SM")
-        tabs.addTab(self._gen_page, "6. Generate")
-        self._tabs = tabs
+        self._pages = [
+            self._file_page,
+            self._identity_page,
+            self._rule_page,
+            self._obj_page,
+            self._pdo_page,
+            self._gen_page,
+        ]
 
-        # ── Log area ───────────────────────────
+        # ── 内容区 (QStackedWidget) ────────────
+        self._stack = QStackedWidget()
+        for page in self._pages:
+            self._stack.addWidget(page)
+
+        # ── 侧边栏 ────────────────────────────
+        sidebar = self._build_sidebar()
+
+        # ── 底部区域：日志 + 进度条 ────────────
         self._log = QTextEdit()
         self._log.setReadOnly(True)
-        self._log.setMaximumHeight(150)
+        self._log.setMaximumHeight(120)
+        self._log.setPlaceholderText("日志输出...")
 
-        # ── Splitter: tabs on top, log on bottom
-        splitter = QSplitter(Qt.Vertical)
-        splitter.addWidget(tabs)
-        splitter.addWidget(self._log)
-        splitter.setSizes([550, 150])
-        self.setCentralWidget(splitter)
+        self._progress = QProgressBar()
+        self._progress.setRange(0, 100)
+        self._progress.setValue(0)
+        self._progress.setMaximumHeight(20)
 
-        # ── Status bar ─────────────────────────
-        self.statusBar().showMessage("Ready")
+        bottom = QWidget()
+        bottom_layout = QVBoxLayout(bottom)
+        bottom_layout.setContentsMargins(0, 0, 0, 0)
+        bottom_layout.addWidget(self._log)
+        bottom_layout.addWidget(self._progress)
 
-        # ── Connect signals ────────────────────
+        # ── 右侧主区域：内容 + 底部 ───────────
+        right = QWidget()
+        right_layout = QVBoxLayout(right)
+        right_layout.setContentsMargins(0, 0, 0, 0)
+        right_layout.addWidget(self._stack, stretch=1)
+        right_layout.addWidget(bottom, stretch=0)
+
+        # ── 水平分割：侧边栏 + 内容 ───────────
+        main_widget = QWidget()
+        main_layout = QHBoxLayout(main_widget)
+        main_layout.setContentsMargins(0, 0, 0, 0)
+        main_layout.setSpacing(0)
+        main_layout.addWidget(sidebar, stretch=0)
+        main_layout.addWidget(right, stretch=1)
+
+        self.setCentralWidget(main_widget)
+
+        # ── 状态栏 ─────────────────────────────
+        self.statusBar().setStyleSheet("background-color: #333; color: #aaa;")
+        self.statusBar().showMessage("就绪")
+
+        # ── 信号连接 ───────────────────────────
         self._file_page.parse_requested.connect(self._on_parse)
         self._gen_page.generate_all.connect(self._on_generate_all)
 
         self._worker = None
         self._parsed_device = None
 
-    # ── Signal handlers ────────────────────────
+        # 默认选中第一页
+        self._set_active_page(0)
+
+    # ═══════════════════════════════════════════
+    # 侧边栏构建
+    # ═══════════════════════════════════════════
+
+    def _build_sidebar(self) -> QWidget:
+        """构建左侧导航栏，参考 UI 图的样式。"""
+        sidebar = QWidget()
+        sidebar.setFixedWidth(240)
+        sidebar.setStyleSheet("background-color: #1e1e1e;")
+        layout = QVBoxLayout(sidebar)
+        layout.setContentsMargins(12, 16, 12, 16)
+        layout.setSpacing(4)
+
+        # ── 标题 ───────────────────────────────
+        title = QLabel("NekoECAT Converter")
+        title.setObjectName("sidebar-title")
+        subtitle = QLabel("ECAT → SSC Tool")
+        subtitle.setObjectName("sidebar-subtitle")
+        layout.addWidget(title)
+        layout.addWidget(subtitle)
+        layout.addSpacing(16)
+
+        # ── 导航按钮 ──────────────────────────
+        self._sidebar_buttons = []
+        step_labels = [
+            ("Step 1", "文件导入"),
+            ("Step 2", "身份配置"),
+            ("Step 3", "规则策略"),
+            ("Step 4", "对象字典"),
+            ("Step 5", "PDO/SM 校验"),
+            ("Step 6", "生成输出"),
+        ]
+        for i, (step, name) in enumerate(step_labels):
+            btn = QPushButton(f"{step}: {name}")
+            btn.setObjectName("sidebar-btn")
+            btn.setCursor(Qt.PointingHandCursor)
+            idx = i
+            btn.clicked.connect(lambda checked, x=idx: self._set_active_page(x))
+            self._sidebar_buttons.append(btn)
+            layout.addWidget(btn)
+
+        layout.addStretch()
+
+        # ── 底部版本信息 ───────────────────────
+        ver = QLabel("v0.1.0")
+        ver.setStyleSheet("color: #555; font-size: 11px;")
+        layout.addWidget(ver)
+
+        return sidebar
+
+    def _set_active_page(self, index: int):
+        """切换到指定页面，更新侧边栏高亮。"""
+        self._stack.setCurrentIndex(index)
+        for i, btn in enumerate(self._sidebar_buttons):
+            btn.setProperty("active", i == index)
+            btn.style().unpolish(btn)
+            btn.style().polish(btn)
+
+    # ═══════════════════════════════════════════
+    # 信号处理：解析
+    # ═══════════════════════════════════════════
 
     def _on_parse(self, paths: dict):
-        """Handle file parse request from Page 1."""
-        self._log_message("Parsing files...")
+        """处理页1的 "解析" 按钮点击。"""
+        self._log_message("正在解析文件...")
+        self._progress.setValue(10)
         try:
-            esi_device = parse_esi(paths["esi_path"]) if paths["esi_path"] else None
-            sdo_device = parse_sdo(paths["sdo_path"]) if paths["sdo_path"] else None
-
-            # Pick whichever device has data
-            device = esi_device or sdo_device
-            if esi_device and sdo_device:
-                from nekoecat.engine import merge
-                device = merge(esi_device, sdo_device)
-
-            if device is None:
-                self._log_message("Error: no device parsed")
-                return
-
-            classify_objects(device)
+            device = parse_only(
+                esi_path=paths.get("esi_path"),
+                sdo_path=paths.get("sdo_path"),
+            )
             self._parsed_device = device
+            self._progress.setValue(50)
 
-            # Update Page 1 result display
+            # ── 更新页1：解析结果 ──────────────
             ident = device.identity
             self._file_page.show_parse_result({
-                "Vendor ID": f"0x{ident.vendor_id:08X}",
-                "Product Code": f"0x{ident.product_code:08X}",
-                "Revision": f"0x{ident.revision_number:08X}",
-                "Device Name": ident.device_name,
-                "Objects": len(device.objects),
-                "SM configs": len(device.sm_configs),
+                "厂商 ID": f"0x{ident.vendor_id:08X}",
+                "产品代码": f"0x{ident.product_code:08X}",
+                "修订号": f"0x{ident.revision_number:08X}",
+                "设备名称": ident.device_name,
+                "对象数量": len(device.objects),
+                "SM 配置": len(device.sm_configs),
                 "RxPDO": len(device.rxpdo_assign),
                 "TxPDO": len(device.txpdo_assign),
             })
 
-            # Update Page 2 identity
+            # ── 更新页2：原始身份 ──────────────
             self._identity_page.set_original_identity({
                 "Vendor ID": f"0x{ident.vendor_id:08X}",
                 "Product Code": f"0x{ident.product_code:08X}",
@@ -116,7 +300,7 @@ class MainWindow(QMainWindow):
                 "Device Name": ident.device_name,
             })
 
-            # Update Page 4 object table
+            # ── 更新页4：对象字典表 ────────────
             obj_rows = []
             for obj in device.sorted_objects():
                 obj_rows.append({
@@ -135,37 +319,61 @@ class MainWindow(QMainWindow):
                 })
             self._obj_page.set_objects(obj_rows)
 
-            # Update Page 5 PDO/SM
-            sm_info = []
-            for sm in device.sm_configs:
-                calc = sm.total_byte_length
-                status = "OK" if sm.default_size == calc or calc == 0 else "MISMATCH"
-                sm_info.append({
-                    "index": f"SM{sm.index}",
-                    "type": sm.pdo_type,
-                    "default_size": sm.default_size,
-                    "calculated_size": calc,
-                    "status": status,
-                })
-            self._pdo_page.set_sm_info(sm_info)
+            # ── 更新页5：PDO/SM 校验 ───────────
+            self._update_pdo_page(device)
 
-            self._log_message(f"Parsed: {len(device.objects)} objects")
-            self.statusBar().showMessage("Parse complete")
-            self._tabs.setCurrentIndex(0)  # stay on file page
+            self._progress.setValue(60)
+            self._log_message(f"解析完成: {len(device.objects)} 个对象")
+            self.statusBar().showMessage("解析完成")
 
         except Exception as e:
-            self._log_message(f"Parse error: {e}")
-            self.statusBar().showMessage("Parse failed")
+            self._log_message(f"解析失败: {e}")
+            self.statusBar().showMessage("解析失败")
+            self._progress.setValue(0)
+
+    def _update_pdo_page(self, device):
+        """更新页5的 SM 校验和 PDO 布局。"""
+        sm_info = []
+        for sm in device.sm_configs:
+            calc = sm.total_byte_length
+            status = "OK" if (sm.default_size == calc or calc == 0) else "MISMATCH"
+            sm_info.append({
+                "index": f"SM{sm.index}",
+                "type": sm.pdo_type,
+                "default_size": sm.default_size,
+                "calculated_size": calc,
+                "status": status,
+            })
+        self._pdo_page.set_sm_info(sm_info)
+
+        lines = []
+        for sm in device.sm_configs:
+            for pdo in sm.pdos:
+                lines.append(f"{pdo.name} (0x{pdo.index:04X})")
+                bit_offset = 0
+                for entry in pdo.entries:
+                    lines.append(
+                        f"  0x{entry.index:04X}:{entry.subindex:02X} "
+                        f"{entry.bit_length}bit  offset {bit_offset}  {entry.name}"
+                    )
+                    bit_offset += entry.bit_length
+                lines.append("")
+        self._pdo_page.set_pdo_layout("\n".join(lines) if lines else "(无 PDO 布局信息)")
+
+    # ═══════════════════════════════════════════
+    # 信号处理：生成
+    # ═══════════════════════════════════════════
 
     def _on_generate_all(self):
-        """Handle Generate All button from Page 6."""
+        """处理页6的 "全部生成" 按钮。"""
         if self._parsed_device is None:
-            self._log_message("Error: parse files first")
+            self._log_message("错误: 请先解析文件")
             return
 
-        self._log_message("Starting conversion...")
+        self._log_message("开始转换...")
+        self._progress.setValue(10)
 
-        # Build ConvertConfig from all pages
+        # ── 从各页面收集配置 ──────────────────
         paths = self._file_page.get_paths()
         identity = self._identity_page.get_config()
         rules = self._rule_page.get_config()
@@ -180,7 +388,6 @@ class MainWindow(QMainWindow):
             **rules,
         )
 
-        # Parse vendor/product overrides
         try:
             if identity.get("vendor_id"):
                 config.vendor_id = int(identity["vendor_id"], 0)
@@ -189,44 +396,44 @@ class MainWindow(QMainWindow):
             if identity.get("revision"):
                 config.revision_number = int(identity["revision"], 0)
         except ValueError as e:
-            self._log_message(f"Invalid identity value: {e}")
+            self._log_message(f"身份值格式错误: {e}")
             return
 
-        # Run conversion in background thread
+        # ── 启动后台工作线程 ──────────────────
         self._worker = ConvertWorker(config)
         self._worker.log.connect(self._log_message)
-        self._worker.progress.connect(self._gen_page.set_progress)
+        self._worker.progress.connect(self._progress.setValue)
         self._worker.finished_ok.connect(self._on_conversion_done)
         self._worker.failed.connect(self._on_conversion_failed)
         self._worker.start()
 
-        self.statusBar().showMessage("Converting...")
-        self._gen_page.set_status("Conversion in progress...")
+        self.statusBar().showMessage("转换中...")
+        self._gen_page.set_status("转换进行中...")
 
     def _on_conversion_done(self, result):
-        """Handle successful conversion."""
-        self._log_message(f"Done: {result.output_dir}")
-        self._gen_page.set_status("Conversion complete!")
-        self._gen_page.set_progress(100)
+        """转换成功完成。"""
+        self._log_message(f"完成: {result.output_dir}")
+        self._gen_page.set_status("转换完成!")
+        self._progress.setValue(100)
 
-        # Collect all output files
         files = {}
         if result.xlsx_path:
             files["SSC xlsx"] = result.xlsx_path
         files.update(result.report_files)
         self._gen_page.set_output_files(files)
-
-        self.statusBar().showMessage("Conversion complete")
-        self._tabs.setCurrentIndex(5)  # switch to Generate page
+        self.statusBar().showMessage("转换完成")
 
     def _on_conversion_failed(self, error: str):
-        """Handle failed conversion."""
-        self._log_message(f"FAILED: {error}")
-        self._gen_page.set_status(f"Failed: {error}")
-        self.statusBar().showMessage("Conversion failed")
+        """转换失败。"""
+        self._log_message(f"失败: {error}")
+        self._gen_page.set_status(f"失败: {error}")
+        self._progress.setValue(0)
+        self.statusBar().showMessage("转换失败")
 
-    # ── Helpers ────────────────────────────────
+    # ═══════════════════════════════════════════
+    # 辅助
+    # ═══════════════════════════════════════════
 
     def _log_message(self, msg: str):
-        """Append a message to the log area."""
+        """向日志区追加一条消息。"""
         self._log.append(msg)

@@ -1,10 +1,11 @@
 """
-ConvertWorker — QThread for non-blocking conversion.
+ConvertWorker — 后台转换工作线程。
 
-Per dev doc §13: runs the full pipeline in a background thread,
-emits progress/log/result signals back to the GUI.
+Per dev doc §13: 在 QThread 中运行完整转换管线，
+通过信号将进度/日志/结果发回 GUI。
 
-Only depends on: nekoecat.core (facade).  No direct engine/parser imports.
+解耦原则：
+  只依赖 nekoecat.core（门面），不直接导入 parser/engine/generator。
 """
 from PyQt5.QtCore import QThread, pyqtSignal
 from nekoecat.config import ConvertConfig
@@ -12,17 +13,17 @@ from nekoecat.core import convert, ConvertResult
 
 
 class ConvertWorker(QThread):
-    """Background worker that runs the conversion pipeline.
+    """后台转换工作线程。
 
-    Signals:
-        log(str)         — human-readable log messages
-        progress(int)    — 0-100 progress percentage
-        finished_ok(dict) — ConvertResult as dict on success
-        failed(str)      — error message on failure
+    信号：
+        log(str)           — 日志消息（显示在 GUI 日志区）
+        progress(int)      — 进度百分比 0-100
+        finished_ok(object) — ConvertResult 对象（成功时）
+        failed(str)        — 错误消息（失败时）
     """
     log = pyqtSignal(str)
     progress = pyqtSignal(int)
-    finished_ok = pyqtSignal(object)   # ConvertResult
+    finished_ok = pyqtSignal(object)
     failed = pyqtSignal(str)
 
     def __init__(self, config: ConvertConfig, parent=None):
@@ -30,27 +31,27 @@ class ConvertWorker(QThread):
         self.config = config
 
     def run(self):
-        """Execute the conversion pipeline.  Called by QThread.start()."""
+        """执行转换管线。由 QThread.start() 调用。"""
         try:
-            self.log.emit("Starting conversion...")
+            self.log.emit("开始转换...")
             self.progress.emit(5)
 
-            self.log.emit(f"ESI: {self.config.esi_path or '(none)'}")
-            self.log.emit(f"SDO: {self.config.sdo_path or '(none)'}")
+            self.log.emit(f"ESI: {self.config.esi_path or '(无)'}")
+            self.log.emit(f"SDO: {self.config.sdo_path or '(无)'}")
             self.progress.emit(10)
 
-            # Call the core facade — the only entry point
+            # 调用 core 门面 —— 唯一入口
             result = convert(self.config)
 
             self.progress.emit(100)
 
             if result.success:
-                self.log.emit(f"Conversion complete: {result.output_dir}")
+                self.log.emit(f"转换完成: {result.output_dir}")
                 self.finished_ok.emit(result)
             else:
-                self.log.emit(f"Conversion failed: {result.error}")
-                self.failed.emit(result.error or "Unknown error")
+                self.log.emit(f"转换失败: {result.error}")
+                self.failed.emit(result.error or "未知错误")
 
         except Exception as e:
-            self.log.emit(f"Exception: {e}")
+            self.log.emit(f"异常: {e}")
             self.failed.emit(str(e))
