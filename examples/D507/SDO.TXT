@@ -1,0 +1,8 @@
+SDO 0x6000, "Digital Inputs"
+0x6000:00, r-r-r-, uint8, 8 bit, "SubIndex 000"
+0x6000:01, r-r-r-, bool, 1 bit, "Digital Input 0"
+0x6000:02, r-r-r-, uint16, 16 bit, "Analog Input"
+SDO 0x7009, "Actuator"
+0x7009:00, r-r-r-, uint8, 8 bit, "SubIndex 000"
+0x7009:01, r-r-rw, uint8, 8 bit, "Actuator Control"
+0x7009:02, r-r-rw, float, 32 bit, "Position SP"

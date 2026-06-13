@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EtherCATInfo>
+  <Vendor><Id>308</Id><Name>Synapticon</Name></Vendor>
+  <Descriptions><Devices><Device>
+    <Type ProductCode="#x00000507" RevisionNo="#x00010000">D507</Type>
+    <Name>D507 Test</Name>
+    <Sm SmIndex="0" StartAddress="#x1000" ControlByte="26" DefaultSize="128" Enable="1"/>
+    <Sm SmIndex="1" StartAddress="#x1400" ControlByte="26" DefaultSize="128" Enable="1"/>
+    <Sm SmIndex="2" StartAddress="#x1800" ControlByte="32" DefaultSize="13" Enable="1"/>
+    <Sm SmIndex="3" StartAddress="#x1C00" ControlByte="32" DefaultSize="53" Enable="1"/>
+    <RxPDO Sm="2"><Index>#x1600</Index><Name>RxPDO</Name>
+      <Entry><Index>#x7009</Index><SubIndex>1</SubIndex><BitLen>8</BitLen><Name>Ctrl</Name><DataType>USINT</DataType></Entry>
+    </RxPDO>
+    <TxPDO Sm="3"><Index>#x1A00</Index><Name>TxPDO</Name>
+      <Entry><Index>#x6000</Index><SubIndex>1</SubIndex><BitLen>1</BitLen><Name>DI</Name><DataType>BOOL</DataType></Entry>
+    </TxPDO>
+  </Device></Devices></Descriptions>
+</EtherCATInfo>
