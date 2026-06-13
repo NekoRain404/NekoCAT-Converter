@@ -1,16 +1,43 @@
+# ═══ Python ══════════════════════════════════════════════════
 __pycache__/
 *.py[cod]
 *$py.class
 *.egg-info/
 dist/
-build/
+*.egg
 .venv/
 venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# ═══ C++ 构建 ═══════════════════════════════════════════════
+gui-cpp/build/
+*.o
+*.so
+*.a
+*.out
+
+# ═══ IDE / 编辑器 ═══════════════════════════════════════════
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+.cache/
+compile_commands.json
+
+# ═══ 系统文件 ═══════════════════════════════════════════════
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# ═══ 输出文件 ═══════════════════════════════════════════════
 out/
 *.xlsx
 *.log
-gui-cpp/build/
+
+# ═══ 临时文件 ═══════════════════════════════════════════════
+*.tmp
+*.bak
+*.orig
