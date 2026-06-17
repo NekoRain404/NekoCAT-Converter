@@ -43,7 +43,7 @@ class EsiParser:
             ))
             return device
 
-        self._fill_identity(device_el, device)
+        self._fill_identity(device_el, device, root=root)
         self._fill_sm_configs(device_el, device)
         self._fill_pdos(device_el, device)
         self._fill_dc(device_el, device)
@@ -68,10 +68,15 @@ class EsiParser:
     # ── identity ───────────────────────────────
 
     @staticmethod
-    def _fill_identity(device_el, device: DeviceModel):
+    def _fill_identity(device_el, device: DeviceModel, root=None):
         ident = device.identity
 
-        vendor_el = utils.xml_find(device_el, "Vendor")
+        # Vendor is at root level, not under Device
+        vendor_el = None
+        if root is not None:
+            vendor_el = utils.xml_find(root, "Vendor")
+        if vendor_el is None:
+            vendor_el = utils.xml_find(device_el, "Vendor")
         if vendor_el is not None:
             ident.vendor_id = utils.to_int(utils.xml_text(utils.xml_find(vendor_el, "Id")))
             ident.vendor_name = utils.xml_text(utils.xml_find(vendor_el, "Name"))
@@ -92,18 +97,26 @@ class EsiParser:
     @staticmethod
     def _fill_sm_configs(device_el, device: DeviceModel):
         seen_indices: set[int] = set()
+        sm_counter = 0  # EtherCAT SMs are numbered by order
 
         # SMs can appear under <DL> or directly under <Device>
         for container in [device_el, utils.xml_find(device_el, "DL")]:
             if container is None:
                 continue
             for sm_el in utils.xml_findall(container, "Sm"):
-                sm_idx = utils.to_int(utils.xml_attr(sm_el, "SmIndex"), -1)
+                # Use SmIndex attribute if present, otherwise use enumeration order
+                sm_idx_attr = utils.xml_attr(sm_el, "SmIndex")
+                if sm_idx_attr:
+                    sm_idx = utils.to_int(sm_idx_attr, -1)
+                else:
+                    sm_idx = sm_counter
+                
                 if sm_idx < 0:
                     continue
                 if sm_idx in seen_indices:
                     continue
                 seen_indices.add(sm_idx)
+                sm_counter = sm_idx + 1
 
                 device.sm_configs.append(SmDefinition(
                     index=sm_idx,
@@ -117,7 +130,7 @@ class EsiParser:
     # ── PDOs ───────────────────────────────────
 
     def _fill_pdos(self, device_el, device: DeviceModel):
-        for tag, direction in [("RxPDO", "rx"), ("TxPDO", "tx")]:
+        for tag, direction in [("RxPdo", "rx"), ("TxPdo", "tx")]:
             for pdo_el in utils.xml_findall(device_el, tag):
                 pdo = self._parse_pdo(pdo_el)
                 if pdo is None:
