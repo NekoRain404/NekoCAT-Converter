@@ -37,6 +37,77 @@
 #include <algorithm>
 
 // ═══ 构造函数 ═════════════════════════════════════════════
+// ═══ ImportWorker 实现 ═════════════════════════════════════
+ImportWorker::ImportWorker(const QString &esi, const QString &sdo,
+                           const QString &root, QObject *parent)
+    : QThread(parent), m_esi(esi), m_sdo(sdo), m_root(root) {}
+
+void ImportWorker::run() {
+    emit log("[导入] 启动解析...");
+    emit progress(10);
+
+    QString pyScript =
+        "import sys, json, os\n"
+        "os.environ.setdefault(\"PYTHONDONTWRITEBYTECODE\", \"1\")\n"
+        "sys.path.insert(0, \".\")\n"
+        "import logging\n"
+        "logging.disable(logging.CRITICAL)\n"
+        "from nekoecat.core import parse_only\n"
+        "esi = sys.argv[1] if sys.argv[1] != \"None\" else None\n"
+        "sdo = sys.argv[2] if sys.argv[2] != \"None\" else None\n"
+        "d = parse_only(esi_path=esi, sdo_path=sdo)\n"
+        "result = json.dumps(d.model_dump(mode=\"json\"), ensure_ascii=False)\n"
+        "sys.stdout.write(result)\n"
+        "sys.stdout.flush()";
+
+    QProcess proc;
+    proc.setWorkingDirectory(m_root);
+    proc.start("python3", {
+        "-c", pyScript,
+        m_esi.isEmpty() ? "None" : m_esi,
+        m_sdo.isEmpty() ? "None" : m_sdo
+    });
+
+    if (!proc.waitForStarted(5000)) {
+        emit failed("无法启动 Python 进程，请确保已安装 Python3");
+        return;
+    }
+
+    emit progress(30);
+
+    if (!proc.waitForFinished(30000)) {
+        proc.kill();
+        emit failed("Python 进程超时");
+        return;
+    }
+
+    emit progress(70);
+
+    if (proc.exitCode() != 0) {
+        QString err = QString::fromUtf8(proc.readAllStandardError());
+        emit failed("解析失败: " + err);
+        return;
+    }
+
+    QString rawOutput = QString::fromUtf8(proc.readAllStandardOutput()).trimmed();
+    int jsonStart = rawOutput.indexOf("{");
+    int jsonEnd = rawOutput.lastIndexOf("}");
+    if (jsonStart < 0 || jsonEnd <= jsonStart) {
+        emit failed("返回数据无效");
+        return;
+    }
+
+    QByteArray jsonData = rawOutput.mid(jsonStart, jsonEnd - jsonStart + 1).toUtf8();
+    QJsonDocument doc = QJsonDocument::fromJson(jsonData);
+    if (doc.isNull()) {
+        emit failed("JSON 解析失败");
+        return;
+    }
+
+    emit progress(100);
+    emit finished(doc.object());
+}
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , m_worker(nullptr)
@@ -58,6 +129,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     statusBar()->showMessage("就绪");
     onStepChanged(0);
+    connectSignals();
 }
 
 // ═══ 侧边栏 ═══════════════════════════════════════════════
@@ -98,6 +170,7 @@ QWidget *MainWindow::buildSidebar() {
 
         auto *numLabel = new QLabel(QString::number(i + 1));
         numLabel->setObjectName("stepNum");
+        m_stepNums[i] = numLabel;
         numLabel->setAlignment(Qt::AlignCenter);
         numLabel->setFixedSize(24, 24);
 
@@ -370,6 +443,8 @@ QWidget *MainWindow::buildBottomBar() {
     addGenBtn("SSC xlsx", "genBtn", 1);
     addGenBtn("TwinCAT", "genBtn", 2);
     addGenBtn("报告", "genBtn", 3);
+    // 应用生成按钮样式
+    bar->setStyleSheet(bar->styleSheet() + Theme::genButtonStyleSheet());
     addGenBtn("C 代码", "genBtn", 4);
     btnRow->addStretch();
     layout->addLayout(btnRow);
@@ -414,6 +489,11 @@ void MainWindow::onStepChanged(int step) {
         m_stepBtns[i]->setProperty("active", (i == step));
         m_stepBtns[i]->style()->unpolish(m_stepBtns[i]);
         m_stepBtns[i]->style()->polish(m_stepBtns[i]);
+
+        // 更新步骤编号圆圈 active 状态
+        m_stepNums[i]->setProperty("active", (i == step));
+        m_stepNums[i]->style()->unpolish(m_stepNums[i]);
+        m_stepNums[i]->style()->polish(m_stepNums[i]);
     }
     // 切换步骤面板
     if (m_steps) m_steps->setCurrentIndex(step);
@@ -445,101 +525,43 @@ void MainWindow::onImport() {
     m_importBtn->setEnabled(false);
     log("[导入] 启动解析...");
 
-    // 定位项目根目录
     QString appDir = QApplication::applicationDirPath();
     QString root = appDir;
-    if (root.endsWith("/gui-cpp/build"))
+    if (root.endsWith("/gui/build"))
         root = QFileInfo(root).path() + "/..";
 
-    // Python 内联脚本
-    // Python 内联脚本: 日志输出到 stderr, JSON 输出到 stdout
-    QString pyScript =
-        "import sys, json, os\n"
-        "os.environ.setdefault(\"PYTHONDONTWRITEBYTECODE\", \"1\")\n"
-        "sys.path.insert(0, \".\")\n"
-        "import logging\n"
-        "logging.disable(logging.CRITICAL)\n"
-        "from nekoecat.core import parse_only\n"
-        "esi = sys.argv[1] if sys.argv[1] != \"None\" else None\n"
-        "sdo = sys.argv[2] if sys.argv[2] != \"None\" else None\n"
-        "d = parse_only(esi_path=esi, sdo_path=sdo)\n"
-        "result = json.dumps(d.model_dump(mode=\"json\"), ensure_ascii=False)\n"
-        "sys.stdout.write(result)\n"
-        "sys.stdout.flush()";
+    auto *worker = new ImportWorker(esi, sdo, root, this);
+    connect(worker, &ImportWorker::log, this, &MainWindow::log);
+    connect(worker, &ImportWorker::progress, m_prog, &QProgressBar::setValue);
+    connect(worker, &ImportWorker::finished, this, [this](const QJsonObject &dev) {
+        m_prog->setValue(100);
+        m_devJson = QJsonDocument(dev).toJson();
+        
+        QJsonObject id = dev["identity"].toObject();
+        auto hex = [](double val) -> QString {
+            return QString("0x%1").arg((quint64)val, 8, 16, QChar('0'));
+        };
+        m_ov->setText(hex(id["vendor_id"].toDouble()));
+        m_op->setText(hex(id["product_code"].toDouble()));
+        m_or->setText(hex(id["revision_number"].toDouble()));
+        m_on->setText(id["device_name"].toString());
 
-    QProcess proc;
-    proc.setWorkingDirectory(root);
-    proc.start("python3", {
-        "-c", pyScript,
-        esi.isEmpty() ? "None" : esi,
-        sdo.isEmpty() ? "None" : sdo
+        updateObjectTable(dev["objects"].toObject());
+        updatePdoPanel(dev);
+
+        int objCount = dev["objects"].toObject().keys().size();
+        log(QString("[完成] 解析成功 — %1 个对象").arg(objCount));
+        setStatus(QString("解析完成 — %1 个对象").arg(objCount));
+        m_importBtn->setEnabled(true);
     });
-
-    if (!proc.waitForStarted(5000)) {
-        log("[错误] 无法启动 Python 进程");
-        setStatus("失败");
-        m_prog->setValue(0);
-        m_importBtn->setEnabled(true);
-        return;
-    }
-
-    // 等待完成 (带超时)
-    if (!proc.waitForFinished(30000)) {
-        proc.kill();
-        log("[错误] Python 进程超时");
-        setStatus("超时");
-        m_prog->setValue(0);
-        m_importBtn->setEnabled(true);
-        return;
-    }
-
-    if (proc.exitCode() != 0) {
-        QString err = QString::fromUtf8(proc.readAllStandardError());
+    connect(worker, &ImportWorker::failed, this, [this](const QString &err) {
         log("[错误] " + err);
         setStatus("解析失败");
         m_prog->setValue(0);
         m_importBtn->setEnabled(true);
-        return;
-    }
-
-    // ── 解析成功 ────────────────────────────
-    // 从 stdout 中提取 JSON (跳过任何非 JSON 前缀)
-    QString rawOutput = QString::fromUtf8(proc.readAllStandardOutput()).trimmed();
-    int jsonStart = rawOutput.indexOf(QString("{"));
-    int jsonEnd = rawOutput.lastIndexOf(QString("}"));
-    if (jsonStart >= 0 && jsonEnd > jsonStart) {
-        m_devJson = rawOutput.mid(jsonStart, jsonEnd - jsonStart + 1);
-    } else {
-        m_devJson = rawOutput;
-    }
-    m_prog->setValue(50);
-
-    QJsonObject dev = QJsonDocument::fromJson(m_devJson.toUtf8()).object();
-    if (dev.isEmpty()) {
-        log("[错误] 返回数据为空或 JSON 无效");
-        setStatus("解析失败");
-        m_prog->setValue(0);
-        m_importBtn->setEnabled(true);
-        return;
-    }
-
-    QJsonObject id = dev["identity"].toObject();
-    auto hex = [](double val) -> QString {
-        return QString("0x%1").arg((quint64)val, 8, 16, QChar('0'));
-    };
-    m_ov->setText(hex(id["vendor_id"].toDouble()));
-    m_op->setText(hex(id["product_code"].toDouble()));
-    m_or->setText(hex(id["revision_number"].toDouble()));
-    m_on->setText(id["device_name"].toString());
-
-    updateObjectTable(dev["objects"].toObject());
-    updatePdoPanel(dev);
-
-    int objCount = dev["objects"].toObject().keys().size();
-    m_prog->setValue(100);
-    log(QString("[完成] 解析成功 — %1 个对象").arg(objCount));
-    setStatus(QString("解析完成 — %1 个对象").arg(objCount));
-    m_importBtn->setEnabled(true);
+    });
+    connect(worker, &ImportWorker::finished, worker, &QObject::deleteLater);
+    worker->start();
 }
 
 // ═══ 对象表格更新 ═════════════════════════════════════════

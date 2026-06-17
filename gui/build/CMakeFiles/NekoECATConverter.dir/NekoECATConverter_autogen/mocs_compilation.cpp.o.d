@@ -1,7 +1,7 @@
 CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o: \
- /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/build/NekoECATConverter_autogen/mocs_compilation.cpp \
+ /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/build/NekoECATConverter_autogen/UVLADIE3JM/moc_mainwindow.cpp \
+ /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/UVLADIE3JM/moc_mainwindow.cpp \
  /usr/include/c++/16.1.1/memory /usr/include/c++/16.1.1/bits/memoryfwd.h \
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -107,7 +107,7 @@ CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.
  /usr/include/c++/16.1.1/backward/auto_ptr.h \
  /usr/include/c++/16.1.1/pstl/glue_memory_defs.h \
  /usr/include/c++/16.1.1/pstl/execution_defs.h \
- /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/build/NekoECATConverter_autogen/UVLADIE3JM/../../../src/mainwindow.h \
+ /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/UVLADIE3JM/../../../src/mainwindow.h \
  /usr/include/qt/QtWidgets/QMainWindow \
  /usr/include/qt/QtWidgets/qmainwindow.h \
  /usr/include/qt/QtWidgets/qtwidgetsglobal.h \
@@ -130,8 +130,8 @@ CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.
  /usr/include/endian.h /usr/include/bits/byteswap.h \
  /usr/include/bits/uintn-identity.h /usr/include/sys/select.h \
  /usr/include/bits/select.h /usr/include/bits/types/sigset_t.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-bsearch.h \
- /usr/include/bits/stdlib-float.h /usr/include/c++/16.1.1/bits/std_abs.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/c++/16.1.1/bits/std_abs.h \
  /usr/include/c++/16.1.1/pstl/glue_algorithm_defs.h \
  /usr/include/qt/QtCore/qtypeinfo.h /usr/include/qt/QtCore/qsysinfo.h \
  /usr/include/qt/QtCore/qlogging.h /usr/include/qt/QtCore/qflags.h \
@@ -173,11 +173,11 @@ CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.
  /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__fpos64_t.h \
  /usr/include/bits/types/struct_FILE.h \
  /usr/include/bits/types/cookie_io_functions_t.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/stdio.h \
- /usr/include/c++/16.1.1/cerrno /usr/include/errno.h \
- /usr/include/bits/errno.h /usr/include/linux/errno.h \
- /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
- /usr/include/asm-generic/errno-base.h /usr/include/bits/types/error_t.h \
+ /usr/include/bits/stdio_lim.h /usr/include/c++/16.1.1/cerrno \
+ /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/bits/types/error_t.h \
  /usr/include/c++/16.1.1/bits/charconv.h \
  /usr/include/c++/16.1.1/bits/basic_string.tcc \
  /usr/include/c++/16.1.1/bits/memory_resource.h \
@@ -273,20 +273,31 @@ CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.
  /usr/include/qt/QtWidgets/qabstractbutton.h \
  /usr/include/qt/QtCore/QVector /usr/include/qt/QtCore/qvector.h \
  /usr/include/qt/QtWidgets/QLabel /usr/include/qt/QtWidgets/qlabel.h \
+ /usr/include/qt/QtCore/QJsonObject /usr/include/qt/QtCore/qjsonobject.h \
+ /usr/include/qt/QtCore/qjsonvalue.h /usr/include/qt/QtCore/qcborvalue.h \
+ /usr/include/qt/QtCore/qdatetime.h /usr/include/qt/QtCore/qcborcommon.h \
+ /usr/include/qt/QtCore/qdebug.h /usr/include/qt/QtCore/qtextstream.h \
+ /usr/include/qt/QtCore/qlocale.h /usr/include/qt/QtCore/qset.h \
+ /usr/include/qt/QtCore/qcontiguouscache.h \
+ /usr/include/qt/QtCore/qregularexpression.h \
+ /usr/include/qt/QtCore/quuid.h /usr/include/qt/QtCore/QThread \
+ /usr/include/qt/QtCore/qthread.h /usr/include/qt/QtCore/qdeadlinetimer.h \
+ /usr/include/qt/QtCore/qelapsedtimer.h /usr/include/c++/16.1.1/future \
+ /usr/include/c++/16.1.1/mutex /usr/include/c++/16.1.1/bits/std_mutex.h \
+ /usr/include/c++/16.1.1/bits/unique_lock.h \
+ /usr/include/c++/16.1.1/condition_variable \
+ /usr/include/c++/16.1.1/bits/atomic_futex.h \
+ /usr/include/c++/16.1.1/bits/std_thread.h \
  /usr/include/qt/QtWidgets/QTableWidget \
  /usr/include/qt/QtWidgets/qtablewidget.h \
  /usr/include/qt/QtWidgets/qtableview.h \
  /usr/include/qt/QtWidgets/qabstractitemview.h \
  /usr/include/qt/QtCore/qabstractitemmodel.h \
  /usr/include/qt/QtCore/qitemselectionmodel.h \
- /usr/include/qt/QtCore/qset.h \
  /usr/include/qt/QtWidgets/qabstractitemdelegate.h \
  /usr/include/qt/QtWidgets/qstyleoption.h \
- /usr/include/qt/QtCore/qlocale.h \
  /usr/include/qt/QtWidgets/qabstractspinbox.h \
- /usr/include/qt/QtGui/qvalidator.h \
- /usr/include/qt/QtCore/qregularexpression.h \
- /usr/include/qt/QtWidgets/qslider.h \
+ /usr/include/qt/QtGui/qvalidator.h /usr/include/qt/QtWidgets/qslider.h \
  /usr/include/qt/QtWidgets/qabstractslider.h \
  /usr/include/qt/QtWidgets/qstyle.h /usr/include/qt/QtWidgets/qtabbar.h \
  /usr/include/qt/QtWidgets/qrubberband.h \
@@ -299,13 +310,5 @@ CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.
  /usr/include/qt/QtWidgets/QRadioButton \
  /usr/include/qt/QtWidgets/qradiobutton.h \
  /usr/include/qt/QtCore/QVariantMap /usr/include/qt/QtCore/qvariant.h \
- /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/build/NekoECATConverter_autogen/UVLADIE3JM/moc_worker.cpp \
- /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/build/NekoECATConverter_autogen/UVLADIE3JM/../../../src/worker.h \
- /usr/include/qt/QtCore/QThread /usr/include/qt/QtCore/qthread.h \
- /usr/include/qt/QtCore/qdeadlinetimer.h \
- /usr/include/qt/QtCore/qelapsedtimer.h /usr/include/c++/16.1.1/future \
- /usr/include/c++/16.1.1/mutex /usr/include/c++/16.1.1/bits/std_mutex.h \
- /usr/include/c++/16.1.1/bits/unique_lock.h \
- /usr/include/c++/16.1.1/condition_variable \
- /usr/include/c++/16.1.1/bits/atomic_futex.h \
- /usr/include/c++/16.1.1/bits/std_thread.h
+ /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/UVLADIE3JM/moc_worker.cpp \
+ /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/UVLADIE3JM/../../../src/worker.h

@@ -1,4 +1,4 @@
-# Install script for directory: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp
+# Install script for directory: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Release")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -49,7 +49,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/NekoECATConverter"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/NekoECATConverter")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/NekoECATConverter" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/NekoECATConverter")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -59,13 +59,13 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/NekoECATConverter.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  include("/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/NekoECATConverter.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/install_local_manifest.txt"
+  file(WRITE "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -81,6 +81,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

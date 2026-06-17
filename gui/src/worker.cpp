@@ -55,6 +55,15 @@ void ConvertWorker::run() {
     emit log("启动转换...");
     emit progress(10);
 
+    // 检查 Python3 是否存在
+    QProcess checkProc;
+    checkProc.start("python3", {"--version"});
+    if (!checkProc.waitForStarted(2000)) {
+        emit failed("未找到 Python3，请确保已安装并添加到 PATH");
+        return;
+    }
+    checkProc.waitForFinished(2000);
+
     // ── 定位 cli.py ─────────────────────────
     QString projectRoot = findProjectRoot();
     QString script = projectRoot + "/cli.py";

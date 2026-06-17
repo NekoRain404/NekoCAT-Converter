@@ -34,6 +34,8 @@
 #include <QPushButton>
 #include <QVector>
 #include <QLabel>
+#include <QJsonObject>
+#include <QThread>
 #include <QTableWidget>
 #include <QComboBox>
 #include <QLineEdit>
@@ -52,6 +54,27 @@ class ConvertWorker; // 前向声明, 避免头文件依赖
  *   3. 连接信号槽, 协调 Worker 线程
  *   4. 更新 UI (表格着色、进度、日志)
  */
+
+/**
+ * ImportWorker — 异步导入工作线程。
+ * 通过 QProcess 调用 Python parse_only()，不阻塞 UI。
+ */
+class ImportWorker : public QThread {
+    Q_OBJECT
+public:
+    explicit ImportWorker(const QString &esi, const QString &sdo, 
+                         const QString &root, QObject *parent = nullptr);
+signals:
+    void log(const QString &msg);
+    void progress(int value);
+    void finished(const QJsonObject &device);
+    void failed(const QString &error);
+protected:
+    void run() override;
+private:
+    QString m_esi, m_sdo, m_root;
+};
+
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
@@ -101,6 +124,7 @@ private:
     // ── 侧边栏 ──────────────────────────────
     QStackedWidget *m_steps;        ///< 步骤面板切换器
     QPushButton    *m_stepBtns[3];  ///< 3个步骤导航按钮
+    QLabel       *m_stepNums[3];  ///< 步骤编号圆圈
     QPushButton    *m_importBtn;    ///< 导入按钮 (红色渐变)
 
     // Step 1: 文件路径

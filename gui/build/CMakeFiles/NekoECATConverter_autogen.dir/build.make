@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp"
+CMAKE_SOURCE_DIR = "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build"
+CMAKE_BINARY_DIR = "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build"
 
 # Utility rule file for NekoECATConverter_autogen.
 
@@ -71,9 +71,9 @@ CMakeFiles/NekoECATConverter_autogen: NekoECATConverter_autogen/timestamp
 NekoECATConverter_autogen/timestamp: /usr/bin/moc
 NekoECATConverter_autogen/timestamp: /usr/bin/uic
 NekoECATConverter_autogen/timestamp: CMakeFiles/NekoECATConverter_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target NekoECATConverter"
-	/usr/bin/cmake -E cmake_autogen "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/NekoECATConverter_autogen.dir/AutogenInfo.json" Release
-	/usr/bin/cmake -E touch "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/NekoECATConverter_autogen/timestamp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target NekoECATConverter"
+	/usr/bin/cmake -E cmake_autogen "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/NekoECATConverter_autogen.dir/AutogenInfo.json" ""
+	/usr/bin/cmake -E touch "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/timestamp"
 
 CMakeFiles/NekoECATConverter_autogen.dir/codegen:
 .PHONY : CMakeFiles/NekoECATConverter_autogen.dir/codegen
@@ -92,6 +92,6 @@ CMakeFiles/NekoECATConverter_autogen.dir/clean:
 .PHONY : CMakeFiles/NekoECATConverter_autogen.dir/clean
 
 CMakeFiles/NekoECATConverter_autogen.dir/depend:
-	cd "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/NekoECATConverter_autogen.dir/DependInfo.cmake" "--color=$(COLOR)" NekoECATConverter_autogen
+	cd "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/NekoECATConverter_autogen.dir/DependInfo.cmake" "--color=$(COLOR)" NekoECATConverter_autogen
 .PHONY : CMakeFiles/NekoECATConverter_autogen.dir/depend
 

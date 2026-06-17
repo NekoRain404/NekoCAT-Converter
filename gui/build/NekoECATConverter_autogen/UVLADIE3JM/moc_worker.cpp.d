@@ -1,5 +1,5 @@
-/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/build/NekoECATConverter_autogen/UVLADIE3JM/moc_worker.cpp: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/src/worker.h \
-  /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/build/NekoECATConverter_autogen/moc_predefs.h \
+/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/UVLADIE3JM/moc_worker.cpp: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/src/worker.h \
+  /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/moc_predefs.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \

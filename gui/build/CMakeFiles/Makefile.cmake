@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/CMakeLists.txt"
+  "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/CMakeLists.txt"
   "CMakeFiles/4.3.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.3.3/CMakeSystem.cmake"
   "/usr/lib/cmake/Qt5/Qt5Config.cmake"

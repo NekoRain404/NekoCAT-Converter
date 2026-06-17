@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp"
+CMAKE_SOURCE_DIR = "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build"
+CMAKE_BINARY_DIR = "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/NekoECATConverter.dir/depend.make
@@ -72,9 +72,9 @@ include CMakeFiles/NekoECATConverter.dir/flags.make
 NekoECATConverter_autogen/timestamp: /usr/bin/moc
 NekoECATConverter_autogen/timestamp: /usr/bin/uic
 NekoECATConverter_autogen/timestamp: CMakeFiles/NekoECATConverter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target NekoECATConverter"
-	/usr/bin/cmake -E cmake_autogen "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/NekoECATConverter_autogen.dir/AutogenInfo.json" Release
-	/usr/bin/cmake -E touch "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/NekoECATConverter_autogen/timestamp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target NekoECATConverter"
+	/usr/bin/cmake -E cmake_autogen "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/NekoECATConverter_autogen.dir/AutogenInfo.json" ""
+	/usr/bin/cmake -E touch "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/timestamp"
 
 CMakeFiles/NekoECATConverter.dir/codegen:
 .PHONY : CMakeFiles/NekoECATConverter.dir/codegen
@@ -82,72 +82,72 @@ CMakeFiles/NekoECATConverter.dir/codegen:
 CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o: CMakeFiles/NekoECATConverter.dir/flags.make
 CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o: NekoECATConverter_autogen/mocs_compilation.cpp
 CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o: CMakeFiles/NekoECATConverter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o -MF CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o -c "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/NekoECATConverter_autogen/mocs_compilation.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o -MF CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o -c "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/mocs_compilation.cpp"
 
 CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/NekoECATConverter_autogen/mocs_compilation.cpp" > CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/mocs_compilation.cpp" > CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/NekoECATConverter_autogen/mocs_compilation.cpp" -o CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/mocs_compilation.cpp" -o CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/NekoECATConverter.dir/src/main.cpp.o: CMakeFiles/NekoECATConverter.dir/flags.make
-CMakeFiles/NekoECATConverter.dir/src/main.cpp.o: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/src/main.cpp
+CMakeFiles/NekoECATConverter.dir/src/main.cpp.o: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/src/main.cpp
 CMakeFiles/NekoECATConverter.dir/src/main.cpp.o: CMakeFiles/NekoECATConverter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NekoECATConverter.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NekoECATConverter.dir/src/main.cpp.o -MF CMakeFiles/NekoECATConverter.dir/src/main.cpp.o.d -o CMakeFiles/NekoECATConverter.dir/src/main.cpp.o -c "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NekoECATConverter.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NekoECATConverter.dir/src/main.cpp.o -MF CMakeFiles/NekoECATConverter.dir/src/main.cpp.o.d -o CMakeFiles/NekoECATConverter.dir/src/main.cpp.o -c "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/main.cpp"
 
 CMakeFiles/NekoECATConverter.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NekoECATConverter.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/main.cpp" > CMakeFiles/NekoECATConverter.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/main.cpp" > CMakeFiles/NekoECATConverter.dir/src/main.cpp.i
 
 CMakeFiles/NekoECATConverter.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NekoECATConverter.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/main.cpp" -o CMakeFiles/NekoECATConverter.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/main.cpp" -o CMakeFiles/NekoECATConverter.dir/src/main.cpp.s
 
 CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o: CMakeFiles/NekoECATConverter.dir/flags.make
-CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/src/mainwindow.cpp
+CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/src/mainwindow.cpp
 CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o: CMakeFiles/NekoECATConverter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o -MF CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o.d -o CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o -c "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/mainwindow.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o -MF CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o.d -o CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o -c "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/mainwindow.cpp"
 
 CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/mainwindow.cpp" > CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/mainwindow.cpp" > CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.i
 
 CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/mainwindow.cpp" -o CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/mainwindow.cpp" -o CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.s
 
 CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o: CMakeFiles/NekoECATConverter.dir/flags.make
-CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/src/worker.cpp
+CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/src/worker.cpp
 CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o: CMakeFiles/NekoECATConverter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o -MF CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o.d -o CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o -c "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/worker.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o -MF CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o.d -o CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o -c "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/worker.cpp"
 
 CMakeFiles/NekoECATConverter.dir/src/worker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NekoECATConverter.dir/src/worker.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/worker.cpp" > CMakeFiles/NekoECATConverter.dir/src/worker.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/worker.cpp" > CMakeFiles/NekoECATConverter.dir/src/worker.cpp.i
 
 CMakeFiles/NekoECATConverter.dir/src/worker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NekoECATConverter.dir/src/worker.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/worker.cpp" -o CMakeFiles/NekoECATConverter.dir/src/worker.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/worker.cpp" -o CMakeFiles/NekoECATConverter.dir/src/worker.cpp.s
 
 CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o: CMakeFiles/NekoECATConverter.dir/flags.make
-CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/src/core/theme.cpp
+CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/src/core/theme.cpp
 CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o: CMakeFiles/NekoECATConverter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o -MF CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o.d -o CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o -c "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/core/theme.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o -MF CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o.d -o CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o -c "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/core/theme.cpp"
 
 CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/core/theme.cpp" > CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/core/theme.cpp" > CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.i
 
 CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/core/theme.cpp" -o CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/core/theme.cpp" -o CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.s
 
 # Object files for target NekoECATConverter
 NekoECATConverter_OBJECTS = \
@@ -171,7 +171,7 @@ NekoECATConverter: /usr/lib/libQt5Widgets.so.5.15.19
 NekoECATConverter: /usr/lib/libQt5Gui.so.5.15.19
 NekoECATConverter: /usr/lib/libQt5Core.so.5.15.19
 NekoECATConverter: CMakeFiles/NekoECATConverter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable NekoECATConverter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable NekoECATConverter"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NekoECATConverter.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -183,6 +183,6 @@ CMakeFiles/NekoECATConverter.dir/clean:
 .PHONY : CMakeFiles/NekoECATConverter.dir/clean
 
 CMakeFiles/NekoECATConverter.dir/depend: NekoECATConverter_autogen/timestamp
-	cd "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/NekoECATConverter.dir/DependInfo.cmake" "--color=$(COLOR)" NekoECATConverter
+	cd "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build" "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/NekoECATConverter.dir/DependInfo.cmake" "--color=$(COLOR)" NekoECATConverter
 .PHONY : CMakeFiles/NekoECATConverter.dir/depend
 

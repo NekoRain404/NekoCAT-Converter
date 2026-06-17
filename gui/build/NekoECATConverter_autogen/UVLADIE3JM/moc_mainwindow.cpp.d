@@ -1,5 +1,5 @@
-/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/build/NekoECATConverter_autogen/UVLADIE3JM/moc_mainwindow.cpp: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/src/mainwindow.h \
-  /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/gui-cpp/build/NekoECATConverter_autogen/moc_predefs.h \
+/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/UVLADIE3JM/moc_mainwindow.cpp: /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/src/mainwindow.h \
+  /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT\ Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/moc_predefs.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -27,6 +27,7 @@
   /usr/include/bits/pthreadtypes.h \
   /usr/include/bits/sched.h \
   /usr/include/bits/setjmp.h \
+  /usr/include/bits/stdio_lim.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
   /usr/include/bits/thread-shared-types.h \
@@ -37,14 +38,18 @@
   /usr/include/bits/types.h \
   /usr/include/bits/types/FILE.h \
   /usr/include/bits/types/__FILE.h \
+  /usr/include/bits/types/__fpos64_t.h \
+  /usr/include/bits/types/__fpos_t.h \
   /usr/include/bits/types/__locale_t.h \
   /usr/include/bits/types/__mbstate_t.h \
   /usr/include/bits/types/__sigset_t.h \
   /usr/include/bits/types/clock_t.h \
   /usr/include/bits/types/clockid_t.h \
+  /usr/include/bits/types/cookie_io_functions_t.h \
   /usr/include/bits/types/error_t.h \
   /usr/include/bits/types/locale_t.h \
   /usr/include/bits/types/mbstate_t.h \
+  /usr/include/bits/types/struct_FILE.h \
   /usr/include/bits/types/struct___jmp_buf_tag.h \
   /usr/include/bits/types/struct_itimerspec.h \
   /usr/include/bits/types/struct_sched_param.h \
@@ -194,6 +199,7 @@
   /usr/include/c++/16.1.1/ext/string_conversions.h \
   /usr/include/c++/16.1.1/ext/type_traits.h \
   /usr/include/c++/16.1.1/functional \
+  /usr/include/c++/16.1.1/future \
   /usr/include/c++/16.1.1/initializer_list \
   /usr/include/c++/16.1.1/ios \
   /usr/include/c++/16.1.1/iosfwd \
@@ -243,6 +249,8 @@
   /usr/include/linux/types.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
+  /usr/include/qt/QtCore/QJsonObject \
+  /usr/include/qt/QtCore/QThread \
   /usr/include/qt/QtCore/QVariantMap \
   /usr/include/qt/QtCore/QVector \
   /usr/include/qt/QtCore/qabstractitemmodel.h \
@@ -253,12 +261,19 @@
   /usr/include/qt/QtCore/qbasicatomic.h \
   /usr/include/qt/QtCore/qbytearray.h \
   /usr/include/qt/QtCore/qbytearraylist.h \
+  /usr/include/qt/QtCore/qcborcommon.h \
+  /usr/include/qt/QtCore/qcborvalue.h \
   /usr/include/qt/QtCore/qchar.h \
   /usr/include/qt/QtCore/qcompilerdetection.h \
   /usr/include/qt/QtCore/qconfig.h \
   /usr/include/qt/QtCore/qcontainerfwd.h \
   /usr/include/qt/QtCore/qcontainertools_impl.h \
+  /usr/include/qt/QtCore/qcontiguouscache.h \
   /usr/include/qt/QtCore/qdatastream.h \
+  /usr/include/qt/QtCore/qdatetime.h \
+  /usr/include/qt/QtCore/qdeadlinetimer.h \
+  /usr/include/qt/QtCore/qdebug.h \
+  /usr/include/qt/QtCore/qelapsedtimer.h \
   /usr/include/qt/QtCore/qflags.h \
   /usr/include/qt/QtCore/qgenericatomic.h \
   /usr/include/qt/QtCore/qglobal.h \
@@ -268,6 +283,8 @@
   /usr/include/qt/QtCore/qiodevice.h \
   /usr/include/qt/QtCore/qitemselectionmodel.h \
   /usr/include/qt/QtCore/qiterator.h \
+  /usr/include/qt/QtCore/qjsonobject.h \
+  /usr/include/qt/QtCore/qjsonvalue.h \
   /usr/include/qt/QtCore/qline.h \
   /usr/include/qt/QtCore/qlist.h \
   /usr/include/qt/QtCore/qlocale.h \
@@ -303,8 +320,11 @@
   /usr/include/qt/QtCore/qsysinfo.h \
   /usr/include/qt/QtCore/qsystemdetection.h \
   /usr/include/qt/QtCore/qtcore-config.h \
+  /usr/include/qt/QtCore/qtextstream.h \
+  /usr/include/qt/QtCore/qthread.h \
   /usr/include/qt/QtCore/qtypeinfo.h \
   /usr/include/qt/QtCore/qurl.h \
+  /usr/include/qt/QtCore/quuid.h \
   /usr/include/qt/QtCore/qvariant.h \
   /usr/include/qt/QtCore/qvarlengtharray.h \
   /usr/include/qt/QtCore/qvector.h \
@@ -379,6 +399,7 @@
   /usr/include/qt/QtWidgets/qwidget.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
+  /usr/include/stdio.h \
   /usr/include/string.h \
   /usr/include/strings.h \
   /usr/include/sys/cdefs.h \

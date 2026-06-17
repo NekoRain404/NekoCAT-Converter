@@ -9,11 +9,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "NekoECATConverter_autogen/timestamp" "custom" "NekoECATConverter_autogen/deps"
-  "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/NekoECATConverter_autogen/mocs_compilation.cpp" "CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o.d"
-  "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/core/theme.cpp" "CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o" "gcc" "CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o.d"
-  "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/main.cpp" "CMakeFiles/NekoECATConverter.dir/src/main.cpp.o" "gcc" "CMakeFiles/NekoECATConverter.dir/src/main.cpp.o.d"
-  "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/mainwindow.cpp" "CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o" "gcc" "CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o.d"
-  "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/src/worker.cpp" "CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o" "gcc" "CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o.d"
+  "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/NekoECATConverter_autogen/mocs_compilation.cpp" "CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/NekoECATConverter.dir/NekoECATConverter_autogen/mocs_compilation.cpp.o.d"
+  "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/core/theme.cpp" "CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o" "gcc" "CMakeFiles/NekoECATConverter.dir/src/core/theme.cpp.o.d"
+  "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/main.cpp" "CMakeFiles/NekoECATConverter.dir/src/main.cpp.o" "gcc" "CMakeFiles/NekoECATConverter.dir/src/main.cpp.o.d"
+  "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/mainwindow.cpp" "CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o" "gcc" "CMakeFiles/NekoECATConverter.dir/src/mainwindow.cpp.o.d"
+  "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/src/worker.cpp" "CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o" "gcc" "CMakeFiles/NekoECATConverter.dir/src/worker.cpp.o.d"
   "" "NekoECATConverter" "gcc" "CMakeFiles/NekoECATConverter.dir/link.d"
   )
 

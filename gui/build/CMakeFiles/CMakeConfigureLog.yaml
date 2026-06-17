@@ -20,7 +20,7 @@ events:
     names:
       - "uname"
     candidate_directories:
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -34,7 +34,7 @@ events:
       - "/usr/bin/core_perl/"
       - "/bin/"
     searched_directories:
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/uname"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/uname"
       - "/home/nekorain/.foundry/bin/uname"
       - "/home/nekorain/.cargo/bin/uname"
       - "/usr/local/sbin/uname"
@@ -42,7 +42,7 @@ events:
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -82,7 +82,7 @@ events:
       - "make"
       - "smake"
     candidate_directories:
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -95,7 +95,7 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     searched_directories:
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/gmake"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/gmake"
       - "/home/nekorain/.foundry/bin/gmake"
       - "/home/nekorain/.cargo/bin/gmake"
       - "/usr/local/sbin/gmake"
@@ -107,7 +107,7 @@ events:
       - "/usr/bin/site_perl/gmake"
       - "/usr/bin/vendor_perl/gmake"
       - "/usr/bin/core_perl/gmake"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/make"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/make"
       - "/home/nekorain/.foundry/bin/make"
       - "/home/nekorain/.cargo/bin/make"
       - "/usr/local/sbin/make"
@@ -115,7 +115,7 @@ events:
     found: "/usr/bin/make"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -156,7 +156,7 @@ events:
       - "icx"
       - "clang++"
     candidate_directories:
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -169,7 +169,7 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     searched_directories:
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/c++"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/c++"
       - "/home/nekorain/.foundry/bin/c++"
       - "/home/nekorain/.cargo/bin/c++"
       - "/usr/local/sbin/c++"
@@ -177,7 +177,7 @@ events:
     found: "/usr/bin/c++"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -216,7 +216,7 @@ events:
     found: "/usr/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -248,7 +248,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/4.3.3/CompilerIdCXX/a.out
+        /home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/4.3.3/CompilerIdCXX/a.out
       
   -
     kind: "find-v1"
@@ -271,7 +271,7 @@ events:
       - "ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -285,7 +285,7 @@ events:
     found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -318,7 +318,7 @@ events:
       - "ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -332,7 +332,7 @@ events:
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -365,7 +365,7 @@ events:
       - "strip"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -379,7 +379,7 @@ events:
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -412,7 +412,7 @@ events:
       - "ld"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -426,7 +426,7 @@ events:
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -459,7 +459,7 @@ events:
       - "nm"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -473,7 +473,7 @@ events:
     found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -506,7 +506,7 @@ events:
       - "objdump"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -520,7 +520,7 @@ events:
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -553,7 +553,7 @@ events:
       - "objcopy"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -567,7 +567,7 @@ events:
     found: "/usr/bin/objcopy"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -600,7 +600,7 @@ events:
       - "readelf"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -614,7 +614,7 @@ events:
     found: "/usr/bin/readelf"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -647,7 +647,7 @@ events:
       - "dlltool"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -660,7 +660,7 @@ events:
       - "/usr/bin/core_perl/"
     searched_directories:
       - "/usr/bin/dlltool"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/dlltool"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/dlltool"
       - "/home/nekorain/.foundry/bin/dlltool"
       - "/home/nekorain/.cargo/bin/dlltool"
       - "/usr/local/sbin/dlltool"
@@ -674,7 +674,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -707,7 +707,7 @@ events:
       - "addr2line"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -721,7 +721,7 @@ events:
     found: "/usr/bin/addr2line"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -754,7 +754,7 @@ events:
       - "tapi"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -767,7 +767,7 @@ events:
       - "/usr/bin/core_perl/"
     searched_directories:
       - "/usr/bin/tapi"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/tapi"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/tapi"
       - "/home/nekorain/.foundry/bin/tapi"
       - "/home/nekorain/.cargo/bin/tapi"
       - "/usr/local/sbin/tapi"
@@ -781,7 +781,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -817,7 +817,7 @@ events:
       - "gcc-ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -830,7 +830,7 @@ events:
       - "/usr/bin/core_perl/"
     searched_directories:
       - "/usr/bin/gcc-ar-16.1"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/gcc-ar-16.1"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/gcc-ar-16.1"
       - "/home/nekorain/.foundry/bin/gcc-ar-16.1"
       - "/home/nekorain/.cargo/bin/gcc-ar-16.1"
       - "/usr/local/sbin/gcc-ar-16.1"
@@ -842,7 +842,7 @@ events:
       - "/usr/bin/vendor_perl/gcc-ar-16.1"
       - "/usr/bin/core_perl/gcc-ar-16.1"
       - "/usr/bin/gcc-ar-16"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/gcc-ar-16"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/gcc-ar-16"
       - "/home/nekorain/.foundry/bin/gcc-ar-16"
       - "/home/nekorain/.cargo/bin/gcc-ar-16"
       - "/usr/local/sbin/gcc-ar-16"
@@ -854,7 +854,7 @@ events:
       - "/usr/bin/vendor_perl/gcc-ar-16"
       - "/usr/bin/core_perl/gcc-ar-16"
       - "/usr/bin/gcc-ar16"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/gcc-ar16"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/gcc-ar16"
       - "/home/nekorain/.foundry/bin/gcc-ar16"
       - "/home/nekorain/.cargo/bin/gcc-ar16"
       - "/usr/local/sbin/gcc-ar16"
@@ -868,7 +868,7 @@ events:
     found: "/usr/bin/gcc-ar"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -904,7 +904,7 @@ events:
       - "gcc-ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -917,7 +917,7 @@ events:
       - "/usr/bin/core_perl/"
     searched_directories:
       - "/usr/bin/gcc-ranlib-16.1"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/gcc-ranlib-16.1"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/gcc-ranlib-16.1"
       - "/home/nekorain/.foundry/bin/gcc-ranlib-16.1"
       - "/home/nekorain/.cargo/bin/gcc-ranlib-16.1"
       - "/usr/local/sbin/gcc-ranlib-16.1"
@@ -929,7 +929,7 @@ events:
       - "/usr/bin/vendor_perl/gcc-ranlib-16.1"
       - "/usr/bin/core_perl/gcc-ranlib-16.1"
       - "/usr/bin/gcc-ranlib-16"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/gcc-ranlib-16"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/gcc-ranlib-16"
       - "/home/nekorain/.foundry/bin/gcc-ranlib-16"
       - "/home/nekorain/.cargo/bin/gcc-ranlib-16"
       - "/usr/local/sbin/gcc-ranlib-16"
@@ -941,7 +941,7 @@ events:
       - "/usr/bin/vendor_perl/gcc-ranlib-16"
       - "/usr/bin/core_perl/gcc-ranlib-16"
       - "/usr/bin/gcc-ranlib16"
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/gcc-ranlib16"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/gcc-ranlib16"
       - "/home/nekorain/.foundry/bin/gcc-ranlib16"
       - "/home/nekorain/.cargo/bin/gcc-ranlib16"
       - "/usr/local/sbin/gcc-ranlib16"
@@ -955,7 +955,7 @@ events:
     found: "/usr/bin/gcc-ranlib"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -976,8 +976,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/CMakeScratch/TryCompile-EtQPmQ"
-      binary: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/CMakeScratch/TryCompile-EtQPmQ"
+      source: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/CMakeScratch/TryCompile-oLcrOm"
+      binary: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/CMakeScratch/TryCompile-oLcrOm"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -988,13 +988,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/CMakeScratch/TryCompile-EtQPmQ'
+        Change Dir: '/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/CMakeScratch/TryCompile-oLcrOm'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_01493/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_01493.dir/build.make CMakeFiles/cmTC_01493.dir/build
-        make[1]: Entering directory '/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/CMakeScratch/TryCompile-EtQPmQ'
-        Building CXX object CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0338b/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_0338b.dir/build.make CMakeFiles/cmTC_0338b.dir/build
+        make[1]: Entering directory '/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/CMakeScratch/TryCompile-oLcrOm'
+        Building CXX object CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         Target: x86_64-pc-linux-gnu
@@ -1002,8 +1002,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.1.1 20260430 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_01493.dir/'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_01493.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccUz2wBt.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0338b.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_0338b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cc7VFCMU.s
         GNU C++20 (GCC) version 16.1.1 20260430 (x86_64-pc-linux-gnu)
         	compiled by GNU C version 16.1.1 20260430, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.27-GMP
         
@@ -1020,14 +1020,14 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: d47d0c990a24bc0dbaf3bd00656bd5f3
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_01493.dir/'
-         as -v --64 -o CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccUz2wBt.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0338b.dir/'
+         as -v --64 -o CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc7VFCMU.s
         GNU assembler version 2.46.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46.0
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_01493
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01493.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_0338b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0338b.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper
@@ -1038,14 +1038,14 @@ events:
         gcc version 16.1.1 20260430 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_01493' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_01493.'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrk3s7c.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_01493 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0338b' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0338b.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccIdbc30.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_0338b /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o
         collect2 version 16.1.1 20260430
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrk3s7c.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_01493 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccIdbc30.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_0338b /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o
         GNU ld (GNU Binutils) 2.46.0
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_01493' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_01493.'
-        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_01493
-        make[1]: Leaving directory '/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/CMakeScratch/TryCompile-EtQPmQ'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0338b' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0338b.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0338b
+        make[1]: Leaving directory '/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/CMakeScratch/TryCompile-oLcrOm'
         
       exitCode: 0
   -
@@ -1084,13 +1084,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/CMakeScratch/TryCompile-EtQPmQ']
+        ignore line: [Change Dir: '/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/CMakeScratch/TryCompile-oLcrOm']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_01493/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_01493.dir/build.make CMakeFiles/cmTC_01493.dir/build]
-        ignore line: [make[1]: Entering directory '/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/CMakeScratch/TryCompile-EtQPmQ']
-        ignore line: [Building CXX object CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0338b/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_0338b.dir/build.make CMakeFiles/cmTC_0338b.dir/build]
+        ignore line: [make[1]: Entering directory '/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/CMakeScratch/TryCompile-oLcrOm']
+        ignore line: [Building CXX object CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [Target: x86_64-pc-linux-gnu]
@@ -1098,8 +1098,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.1.1 20260430 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_01493.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_01493.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccUz2wBt.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0338b.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_0338b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cc7VFCMU.s]
         ignore line: [GNU C++20 (GCC) version 16.1.1 20260430 (x86_64-pc-linux-gnu)]
         ignore line: [	compiled by GNU C version 16.1.1 20260430  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1116,14 +1116,14 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: d47d0c990a24bc0dbaf3bd00656bd5f3]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_01493.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccUz2wBt.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0338b.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc7VFCMU.s]
         ignore line: [GNU assembler version 2.46.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46.0]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_01493]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01493.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_0338b]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0338b.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper]
@@ -1134,13 +1134,13 @@ events:
         ignore line: [gcc version 16.1.1 20260430 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_01493' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_01493.']
-        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrk3s7c.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_01493 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0338b' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0338b.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccIdbc30.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_0338b /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccrk3s7c.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccIdbc30.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-latomic_asneeded] ==> ignore
@@ -1156,7 +1156,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_01493] ==> ignore
+          arg [cmTC_0338b] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o]
@@ -1168,7 +1168,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1180,7 +1180,7 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
         ignore line: [collect2 version 16.1.1 20260430]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrk3s7c.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_01493 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_01493.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccIdbc30.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_0338b /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_0338b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
@@ -1257,27 +1257,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/Qt5CoreConfig.cmake"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/Qt5CoreConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/qt5core-config.cmake"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/qt5core-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/lib/cps/Qt5Core.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/lib/cps/Qt5Core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/lib/cps/qt5core.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/lib/cps/qt5core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/share/cps/Qt5Core.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/share/cps/Qt5Core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/share/cps/qt5core.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/share/cps/qt5core.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -1294,7 +1294,7 @@ events:
       version: "5.15.19"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -1339,7 +1339,7 @@ events:
     names:
       - "EGL"
     candidate_directories:
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -1364,7 +1364,7 @@ events:
       - "/opt/"
       - "/usr/lib/X11/"
     searched_directories:
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -1381,7 +1381,7 @@ events:
     found: "/usr/lib/libEGL.so"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -1428,13 +1428,13 @@ events:
     names:
       - "EGLd"
     candidate_directories:
-      - "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/"
+      - "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/"
     searched_directories:
-      - "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/"
+      - "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/"
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -1481,7 +1481,7 @@ events:
     names:
       - "GL"
     candidate_directories:
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -1506,7 +1506,7 @@ events:
       - "/opt/"
       - "/usr/lib/X11/"
     searched_directories:
-      - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/"
+      - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/"
       - "/home/nekorain/.foundry/bin/"
       - "/home/nekorain/.cargo/bin/"
       - "/usr/local/sbin/"
@@ -1523,7 +1523,7 @@ events:
     found: "/usr/lib/libGL.so"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -1570,13 +1570,13 @@ events:
     names:
       - "GLd"
     candidate_directories:
-      - "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/"
+      - "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/"
     searched_directories:
-      - "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/"
+      - "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/"
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -1648,27 +1648,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/Qt5GuiConfig.cmake"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/Qt5GuiConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/qt5gui-config.cmake"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/qt5gui-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/lib/cps/Qt5Gui.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/lib/cps/Qt5Gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/lib/cps/qt5gui.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/lib/cps/qt5gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/share/cps/Qt5Gui.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/share/cps/Qt5Gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/share/cps/qt5gui.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/share/cps/qt5gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -1685,7 +1685,7 @@ events:
       version: "5.15.19"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -1752,27 +1752,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/Qt5WidgetsConfig.cmake"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/Qt5WidgetsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/qt5widgets-config.cmake"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/qt5widgets-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/lib/cps/Qt5Widgets.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/lib/cps/Qt5Widgets.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/lib/cps/qt5widgets.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/lib/cps/qt5widgets.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/share/cps/Qt5Widgets.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/share/cps/Qt5Widgets.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/share/cps/qt5widgets.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/share/cps/qt5widgets.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -1789,7 +1789,7 @@ events:
       version: "5.15.19"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
@@ -1866,51 +1866,51 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/Qt5Config.cmake"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/Qt5Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/qt5-config.cmake"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/qt5-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/lib/cps/Qt5.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/lib/cps/Qt5.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/lib/cps/qt5.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/lib/cps/qt5.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/share/cps/Qt5.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/share/cps/Qt5.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/pkgRedirects/share/cps/qt5.cps"
+        path: "/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/.worktrees/feat-v0.3-refactor/gui/build/CMakeFiles/pkgRedirects/share/cps/qt5.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/Qt5Config.cmake"
+        path: "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/Qt5Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/qt5-config.cmake"
+        path: "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/qt5-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/lib/cps/Qt5.cps"
+        path: "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/lib/cps/Qt5.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/lib/cps/qt5.cps"
+        path: "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/lib/cps/qt5.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/share/cps/Qt5.cps"
+        path: "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/share/cps/Qt5.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G/share/cps/qt5.cps"
+        path: "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC/share/cps/qt5.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -2543,7 +2543,7 @@ events:
       version: "5.15.19"
     search_context:
       ENV{PATH}:
-        - "/home/nekorain/.codex/tmp/arg0/codex-arg0clyF5G"
+        - "/home/nekorain/.codex/tmp/arg0/codex-arg0mJXHLC"
         - "/home/nekorain/.foundry/bin"
         - "/home/nekorain/.cargo/bin"
         - "/usr/local/sbin"
