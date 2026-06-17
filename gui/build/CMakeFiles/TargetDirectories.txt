@@ -1,0 +1,9 @@
+/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/NekoECATConverter.dir
+/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/edit_cache.dir
+/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/rebuild_cache.dir
+/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/list_install_components.dir
+/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/install.dir
+/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/install/local.dir
+/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/install/strip.dir
+/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/NekoECATConverter_autogen_timestamp_deps.dir
+/home/nekorain/Documents/LTSPICE/NEW/vibecoding/NekoCAT Converter/gui-cpp/build/CMakeFiles/NekoECATConverter_autogen.dir
