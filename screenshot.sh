@@ -4,7 +4,7 @@
 # 示例: ./screenshot.sh /tmp/my_gui.png
 set -e
 OUT="${1:-/tmp/nekoecat_screenshot.png}"
-BIN="gui-cpp/build/NekoECATConverter"
+BIN="gui/build/NekoECATConverter"
 DISPLAY_NUM=99
 
 # 清理旧的 Xvfb

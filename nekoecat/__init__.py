@@ -8,4 +8,4 @@ Architecture:
     generator/  Models → output files
     core.py     Public facade (orchestrates parser→engine→generator)
 """
-__version__ = "0.1.0"
+__version__ = "0.3.0-alpha"

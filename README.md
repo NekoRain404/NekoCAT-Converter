@@ -94,7 +94,7 @@ NekoCAT Converter/
 │   ├── config.py            # 转换配置
 │   ├── constants.py         # 常量定义
 │   └── utils.py             # 工具函数
-├── gui-cpp/                 # C++ Qt5 前端 (~2400 行)
+├── gui/                 # C++ Qt5 前端 (~2400 行)
 │   ├── src/
 │   │   ├── core/theme.*     # 主题样式 (解耦)
 │   │   ├── mainwindow.*     # 主窗口布局
@@ -157,7 +157,7 @@ python cli.py convert \
 ### 构建 C++ GUI
 
 ```bash
-cd gui-cpp
+cd gui
 mkdir -p build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
@@ -239,7 +239,7 @@ pip install -e .
 python cli.py --help
 
 # 前端开发
-cd gui-cpp
+cd gui
 mkdir -p build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Debug
 make -j$(nproc)

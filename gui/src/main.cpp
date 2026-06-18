@@ -14,7 +14,7 @@
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     app.setApplicationName("NekoECAT Converter");
-    app.setApplicationVersion("0.2.0");
+    app.setApplicationVersion("0.3.0");
     app.setStyle("Fusion");
 
     QCommandLineParser parser;
